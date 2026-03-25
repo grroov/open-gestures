@@ -13,12 +13,12 @@
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --primary: #d0bcff;
+        --primary: #02bf02;
         --on-primary: #381e72;
         --surface: #141218;
-        --on-surface: #e6e1e5;
+        --on-surface: #ffffff;
         --outline: #938f99;
-        --surface-container: #211f26;
+        --surface-container: #45414e;
       }
     }
     body { 
@@ -108,26 +108,16 @@
 
     input[type="color"] { 
       border: none; 
-      width: 32px; height: 32px; 
+      width: 128px; height: 32px; 
       cursor: pointer; 
       background: none; 
       padding: 0;
-      border-radius: 50%;
+      border-radius: 16px;
       overflow: hidden;
     }
-    
-    .color-control { display: flex; align-items: center; gap: 8px; }
-    button { 
-      cursor: pointer; 
-      padding: 6px 12px; 
-      background: var(--primary); 
-      color: var(--on-primary); 
-      border: none;
-      border-radius: 20px; 
-      font-size: 0.75rem;
-      font-weight: 600;
+    #colorPickerSection {
+      margin-bottom: 0 !important;
     }
-    
     .status { 
       font-size: 0.8rem; 
       color: var(--primary); 
@@ -185,7 +175,6 @@
     <div class="help">Select color (if Dynamic is disabled).</div>
     <div class="color-control">
       <input type="color" id="trailColor" value="#00ffff">
-      <button id="highContrastBtn">Cyan</button>
     </div>
   </div>
 

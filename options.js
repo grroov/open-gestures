@@ -50,11 +50,6 @@ document.getElementById('escCancel').addEventListener('change', saveOptions);
 document.getElementById('dynamicColor').addEventListener('change', saveOptions);
 document.getElementById('trailColor').addEventListener('input', saveOptions);
 
-document.getElementById('highContrastBtn').addEventListener('click', () => {
-  document.getElementById('trailColor').value = '#00ffff';
-  saveOptions();
-});
-
 document.getElementById('titleLink').addEventListener('click', () => {
   chrome.tabs.create({ url: 'https://github.com/grroov/open-gestures' });
 });
