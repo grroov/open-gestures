@@ -1,0 +1,30 @@
+{
+   "action": {
+      "default_icon": "icon.png"
+   },
+   "background": {
+      "service_worker": "background.js"
+   },
+   "content_scripts": [
+      {
+         "all_frames": true,
+         "js": [
+            "gestures.js"
+         ],
+         "matches": [
+            "\u003Call_urls>"
+         ],
+         "run_at": "document_start"
+      }
+   ],
+   "description": "Super minimal and fast middle button mouse gestures!",
+   "icons": {
+      "128": "icon.png"
+   },
+   "manifest_version": 3,
+   "name": "Open Gestures",
+   "permissions": [
+      "tabs"
+   ],
+   "version": "1"
+}
