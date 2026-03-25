@@ -5,7 +5,7 @@ This document summarizes the refactoring and feature enhancements performed duri
 ## Core Philosophy
 The extension remains "super minimal" but has been upgraded from simple coordinate-based checks to robust radial and angular detection for the 8 basic directions.
 
-## Version 90-106 Evolution
+## Version 2026 Evolution
 
 ### 1. Gesture Detection Logic (Radial & Angular)
 - **Problem:** Original logic used "box-based" checks (`dx > 40`), making diagonals harder to trigger.
