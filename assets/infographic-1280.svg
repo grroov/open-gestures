@@ -20,8 +20,8 @@
   <text x="640" y="100" font-family="Segoe UI, Roboto, sans-serif" font-size="56" font-weight="bold" fill="url(#titleGradient)" text-anchor="middle" letter-spacing="4">OPEN GESTURES</text>
   <text x="640" y="150" font-family="Segoe UI, Roboto, sans-serif" font-size="22" fill="#94A3B8" text-anchor="middle">Super minimal. Lightning fast.</text>
 
-  <!-- Center Hub Centered Vertically in grid area -->
-  <g transform="translate(610, 410)">
+  <!-- Center Hub Lowered slightly more for better balance -->
+  <g transform="translate(610, 420)">
     <!-- Mouse Icon -->
     <rect width="60" height="90" rx="30" stroke="#94A3B8" stroke-width="3"/>
     <rect x="27" y="15" width="6" height="15" rx="3" fill="#FF00FF">
