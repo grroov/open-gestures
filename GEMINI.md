@@ -48,3 +48,9 @@ The extension remains "super minimal" but has been upgraded from simple coordina
 - **Build Increment:** The `build` number (third digit) increments automatically with every code change.
 - **Major/Minor Increment:** `major` and `minor` numbers only get incremented as requested by a human.
 - **Storage:** The version string is only stored in the extension manifest.
+
+## Asset Management
+
+- **Infographic Sync:** `assets/infographic.png` must always be updated in tandem with `assets/infographic.svg`.
+- **Conversion Command:** Use `sips -s format png assets/infographic.svg --out assets/infographic.png` on macOS to perform the conversion.
+- **Icon Source:** `assets/icon.png` is the primary icon for all manifest declarations.
