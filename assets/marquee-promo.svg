@@ -1,0 +1,94 @@
+<svg width="1400" height="560" viewBox="0 0 1400 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with Gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0" y1="0" x2="1400" y2="560" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1E293B"/>
+      <stop offset="1" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="titleGradient" x1="0" y1="0" x2="1400" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00FFFF"/>
+      <stop offset="1" stop-color="#FF00FF"/>
+    </linearGradient>
+    <linearGradient id="trailGradientMarquee" x1="150" y1="280" x2="1300" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF00FF" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#FF00FF" stop-opacity="0"/>
+    </linearGradient>
+    <symbol id="starMarquee" viewBox="0 0 24 24">
+      <path d="M12 2L14.5 9.5H22L16 14L18.5 22L12 17.5L5.5 22L8 14L2 9.5H9.5L12 2Z" fill="white"/>
+    </symbol>
+  </defs>
+  
+  <rect width="1400" height="560" rx="24" fill="url(#bgGradient)"/>
+  
+  <!-- Massive Pink Trail Across Background -->
+  <path d="M150 280C400 280 900 450 1300 400" stroke="url(#trailGradientMarquee)" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.4"/>
+
+  <!-- Left Side: Large Mouse Icon -->
+  <g transform="translate(100, 150) scale(2.2)">
+    <rect width="60" height="90" rx="30" stroke="#94A3B8" stroke-width="4" fill="#1E293B"/>
+    <rect x="27" y="15" width="6" height="15" rx="3" fill="#FF00FF"/>
+  </g>
+
+  <!-- Center-Left: Main Branding -->
+  <g transform="translate(300, 240)">
+    <text x="0" y="0" font-family="Segoe UI, Roboto, sans-serif" font-size="72" font-weight="bold" fill="url(#titleGradient)" letter-spacing="4">OPEN GESTURES</text>
+    <text x="5" y="50" font-family="Segoe UI, Roboto, sans-serif" font-size="24" fill="#94A3B8">Super minimal. Lightning fast. No spyware.</text>
+  </g>
+
+  <!-- Right Side: Gesture Grid (Compact 4x2) -->
+  <g transform="translate(850, 80)">
+    <!-- Row 1 -->
+    <g transform="translate(0, 0)">
+      <rect width="120" height="90" rx="12" fill="white" fill-opacity="0.03" stroke="#FF00FF" stroke-opacity="0.2"/>
+      <path d="M90 70L30 20M30 20V55M30 20H65" stroke="#FF00FF" stroke-width="6" stroke-opacity="0.15" stroke-linecap="round" stroke-linejoin="round" transform="translate(15, 10) scale(0.6)"/>
+      <text x="60" y="75" font-family="Segoe UI, Roboto, sans-serif" font-size="12" fill="#F8FAFC" text-anchor="middle">Prev Tab</text>
+    </g>
+    <g transform="translate(130, 0)">
+      <rect width="120" height="90" rx="12" fill="white" fill-opacity="0.03" stroke="#00FFFF" stroke-opacity="0.2"/>
+      <path d="M60 70V20M60 20L30 50M60 20L90 50" stroke="#00FFFF" stroke-width="6" stroke-opacity="0.15" stroke-linecap="round" stroke-linejoin="round" transform="translate(15, 10) scale(0.6)"/>
+      <text x="60" y="75" font-family="Segoe UI, Roboto, sans-serif" font-size="12" fill="#F8FAFC" text-anchor="middle">Scroll Top</text>
+    </g>
+    <g transform="translate(260, 0)">
+      <rect width="120" height="90" rx="12" fill="white" fill-opacity="0.03" stroke="#FF00FF" stroke-opacity="0.2"/>
+      <path d="M30 70L90 20M90 20H50M90 20V55" stroke="#FF00FF" stroke-width="6" stroke-opacity="0.15" stroke-linecap="round" stroke-linejoin="round" transform="translate(15, 10) scale(0.6)"/>
+      <text x="60" y="75" font-family="Segoe UI, Roboto, sans-serif" font-size="12" fill="#F8FAFC" text-anchor="middle">Next Tab</text>
+    </g>
+    <g transform="translate(390, 0)">
+      <rect width="120" height="90" rx="12" fill="white" fill-opacity="0.03" stroke="#00FFFF" stroke-opacity="0.2"/>
+      <path d="M100 45H20M20 45L50 75M20 45L50 15" stroke="#00FFFF" stroke-width="6" stroke-opacity="0.15" stroke-linecap="round" stroke-linejoin="round" transform="translate(15, 10) scale(0.6)"/>
+      <text x="60" y="75" font-family="Segoe UI, Roboto, sans-serif" font-size="12" fill="#F8FAFC" text-anchor="middle">Back</text>
+    </g>
+    <!-- Row 2 -->
+    <g transform="translate(0, 100)">
+      <rect width="120" height="90" rx="12" fill="white" fill-opacity="0.03" stroke="#FF00FF" stroke-opacity="0.2"/>
+      <path d="M90 20L30 70M30 70H70M30 70V30" stroke="#FF00FF" stroke-width="6" stroke-opacity="0.15" stroke-linecap="round" stroke-linejoin="round" transform="translate(15, 10) scale(0.6)"/>
+      <text x="60" y="75" font-family="Segoe UI, Roboto, sans-serif" font-size="12" fill="#F8FAFC" text-anchor="middle">New Tab</text>
+    </g>
+    <g transform="translate(130, 100)">
+      <rect width="120" height="90" rx="12" fill="white" fill-opacity="0.03" stroke="#00FFFF" stroke-opacity="0.2"/>
+      <path d="M60 20V70M60 70L90 40M60 70L30 40" stroke="#00FFFF" stroke-width="6" stroke-opacity="0.15" stroke-linecap="round" stroke-linejoin="round" transform="translate(15, 10) scale(0.6)"/>
+      <text x="60" y="75" font-family="Segoe UI, Roboto, sans-serif" font-size="12" fill="#F8FAFC" text-anchor="middle">Scroll Bottom</text>
+    </g>
+    <g transform="translate(260, 100)">
+      <rect width="120" height="90" rx="12" fill="white" fill-opacity="0.03" stroke="#FF00FF" stroke-opacity="0.2"/>
+      <path d="M30 20L90 70M90 70V30M90 70H50" stroke="#FF00FF" stroke-width="6" stroke-opacity="0.15" stroke-linecap="round" stroke-linejoin="round" transform="translate(15, 10) scale(0.6)"/>
+      <text x="60" y="75" font-family="Segoe UI, Roboto, sans-serif" font-size="12" fill="#F8FAFC" text-anchor="middle">Close Tab</text>
+    </g>
+    <g transform="translate(390, 100)">
+      <rect width="120" height="90" rx="12" fill="white" fill-opacity="0.03" stroke="#00FFFF" stroke-opacity="0.2"/>
+      <path d="M20 45H100M100 45L70 15M100 45L70 75" stroke="#00FFFF" stroke-width="6" stroke-opacity="0.15" stroke-linecap="round" stroke-linejoin="round" transform="translate(15, 10) scale(0.6)"/>
+      <text x="60" y="75" font-family="Segoe UI, Roboto, sans-serif" font-size="12" fill="#F8FAFC" text-anchor="middle">Forward</text>
+    </g>
+  </g>
+
+  <!-- Twinkling Stars scattered along trail -->
+  <use href="#starMarquee" x="400" y="320" width="12" height="12">
+    <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" begin="0.1s"/>
+  </use>
+  <use href="#starMarquee" x="700" y="380" width="15" height="15">
+    <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite" begin="0.5s"/>
+  </use>
+  <use href="#starMarquee" x="1100" y="420" width="10" height="10">
+    <animate attributeName="opacity" values="0;1;0" dur="1.8s" repeatCount="indefinite" begin="1s"/>
+  </use>
+</svg>
