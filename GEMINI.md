@@ -51,6 +51,22 @@ The extension remains "super minimal" but has been upgraded from simple coordina
 
 ## Asset Management
 
-- **Infographic Sync:** `assets/infographic.png` must always be updated in tandem with `assets/infographic.svg`.
-- **Conversion Command:** Use `sips -s format png assets/infographic.svg --out assets/infographic.png` on macOS to perform the conversion.
-- **Icon Source:** `assets/icon.png` is the primary icon for all manifest declarations.
+- **Infographic Sync:** `assets/*.png` versions MUST be updated via `sips` whenever `.svg` sources change.
+- **Conversion Command:** Use `sips -s format png assets/[file].svg --out assets/[file].png` to perform the conversion.
+- **Store Assets:**
+  - `promo-tile.png` (440x280): Small tile with pink trail and twinkling stars.
+  - `marquee-promo.png` (1400x560): High-res branding with gesture reference grid.
+  - `infographic-1280.png` (1280x800): Standard infographic for Chrome Web Store.
+  - `description.txt`: Concise one-paragraph description for CWS.
+
+## Store Submission & Packaging
+
+- **Release Package:** `open-gestures-v[version].zip`
+- **Included Files:**
+  - `manifest.json`
+  - `background.js`
+  - `gestures.js`
+  - `options.html`
+  - `options.js`
+  - `assets/icon.png` (Only the primary icon is required in the ZIP).
+- **Packaging Command:** `zip -r open-gestures-v2026.1.0.zip manifest.json background.js gestures.js options.html options.js assets/icon.png`
