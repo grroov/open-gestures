@@ -9,20 +9,38 @@
       <stop stop-color="#00FFFF"/>
       <stop offset="1" stop-color="#FF00FF"/>
     </linearGradient>
-    <!-- Fade out gradient for the trail -->
-    <linearGradient id="trailGradient" x1="215" y1="120" x2="420" y2="80" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#00FFFF" stop-opacity="0.6"/>
-      <stop offset="1" stop-color="#00FFFF" stop-opacity="0"/>
+    <!-- Pink Fade out gradient for the trail -->
+    <linearGradient id="trailGradient" x1="215" y1="110" x2="420" y2="70" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF00FF" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#FF00FF" stop-opacity="0"/>
     </linearGradient>
+    <!-- Star twinkling animation -->
+    <symbol id="star" viewBox="0 0 24 24">
+      <path d="M12 2L14.5 9.5H22L16 14L18.5 22L12 17.5L5.5 22L8 14L2 9.5H9.5L12 2Z" fill="white"/>
+    </symbol>
   </defs>
   
   <rect width="440" height="280" rx="16" fill="url(#bgGradient)"/>
   
-  <!-- Mouse Trail (Fading across) -->
-  <path d="M215 120C280 120 350 100 420 80" stroke="url(#trailGradient)" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <!-- Mouse Trail (Fading Pink, moved UP) -->
+  <path d="M215 110C280 110 350 90 420 70" stroke="url(#trailGradient)" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+  <!-- Twinkling Stars -->
+  <use href="#star" x="250" y="105" width="8" height="8">
+    <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite" begin="0.2s"/>
+  </use>
+  <use href="#star" x="290" y="95" width="10" height="10">
+    <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" begin="0.8s"/>
+  </use>
+  <use href="#star" x="330" y="85" width="6" height="6">
+    <animate attributeName="opacity" values="0;1;0" dur="1.2s" repeatCount="indefinite" begin="0.5s"/>
+  </use>
+  <use href="#star" x="380" y="75" width="12" height="12">
+    <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite" begin="1.2s"/>
+  </use>
 
   <!-- Icon Elements -->
-  <g transform="translate(170, 60) scale(1.5)">
+  <g transform="translate(170, 50) scale(1.5)">
     <!-- Mouse Outline -->
     <rect width="60" height="90" rx="30" stroke="#94A3B8" stroke-width="4" fill="#1E293B"/>
     <!-- Middle Button Accent -->
