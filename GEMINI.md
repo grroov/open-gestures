@@ -48,3 +48,25 @@ The extension remains "super minimal" but has been upgraded from simple coordina
 - **Build Increment:** The `build` number (third digit) increments automatically with every code change.
 - **Major/Minor Increment:** `major` and `minor` numbers only get incremented as requested by a human.
 - **Storage:** The version string is only stored in the extension manifest.
+
+## Asset Management
+
+- **Infographic Sync:** `assets/*.png` versions MUST be updated via `sips` whenever `.svg` sources change.
+- **Conversion Command:** Use `sips -s format png assets/[file].svg --out assets/[file].png` to perform the conversion.
+- **Store Assets:**
+  - `promo-tile.png` (440x280): Small tile with pink trail and twinkling stars.
+  - `marquee-promo.png` (1400x560): High-res branding with gesture reference grid.
+  - `infographic-1280.png` (1280x800): Standard infographic for Chrome Web Store.
+  - `description.txt`: Concise one-paragraph description for CWS.
+
+## Store Submission & Packaging
+
+- **Release Package:** `open-gestures-v[version].zip`
+- **Included Files:**
+  - `manifest.json`
+  - `background.js`
+  - `gestures.js`
+  - `options.html`
+  - `options.js`
+  - `assets/icon.png` (Only the primary icon is required in the ZIP).
+- **Packaging Command:** `zip -r open-gestures-v2026.1.0.zip manifest.json background.js gestures.js options.html options.js assets/icon.png`
