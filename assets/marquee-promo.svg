@@ -9,7 +9,7 @@
       <stop stop-color="#00FFFF"/>
       <stop offset="1" stop-color="#FF00FF"/>
     </linearGradient>
-    <linearGradient id="trailGradientMarquee" x1="150" y1="280" x2="1300" y2="400" gradientUnits="userSpaceOnUse">
+    <linearGradient id="trailGradientMarquee" x1="150" y1="220" x2="1300" y2="340" gradientUnits="userSpaceOnUse">
       <stop stop-color="#FF00FF" stop-opacity="0.6"/>
       <stop offset="1" stop-color="#FF00FF" stop-opacity="0"/>
     </linearGradient>
@@ -20,17 +20,17 @@
   
   <rect width="1400" height="560" rx="24" fill="url(#bgGradient)"/>
   
-  <!-- Massive Pink Trail Across Background -->
-  <path d="M150 280C400 280 900 450 1300 400" stroke="url(#trailGradientMarquee)" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.4"/>
+  <!-- Massive Pink Trail Across Background (Moved slightly up to make room below) -->
+  <path d="M150 220C400 220 900 390 1300 340" stroke="url(#trailGradientMarquee)" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.4"/>
 
   <!-- Left Side: Large Mouse Icon -->
-  <g transform="translate(100, 150) scale(2.2)">
+  <g transform="translate(100, 100) scale(2.2)">
     <rect width="60" height="90" rx="30" stroke="#94A3B8" stroke-width="4" fill="#1E293B"/>
     <rect x="27" y="15" width="6" height="15" rx="3" fill="#FF00FF"/>
   </g>
 
-  <!-- Center-Left: Main Branding -->
-  <g transform="translate(300, 240)">
+  <!-- Center-Left: Main Branding (Moved BELOW the trail) -->
+  <g transform="translate(300, 380)">
     <text x="0" y="0" font-family="Segoe UI, Roboto, sans-serif" font-size="72" font-weight="bold" fill="url(#titleGradient)" letter-spacing="4">OPEN GESTURES</text>
     <text x="5" y="50" font-family="Segoe UI, Roboto, sans-serif" font-size="24" fill="#94A3B8">Super minimal. Lightning fast. No spyware.</text>
   </g>
@@ -82,13 +82,13 @@
   </g>
 
   <!-- Twinkling Stars scattered along trail -->
-  <use href="#starMarquee" x="400" y="320" width="12" height="12">
+  <use href="#starMarquee" x="400" y="260" width="12" height="12">
     <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" begin="0.1s"/>
   </use>
-  <use href="#starMarquee" x="700" y="380" width="15" height="15">
+  <use href="#starMarquee" x="700" y="320" width="15" height="15">
     <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite" begin="0.5s"/>
   </use>
-  <use href="#starMarquee" x="1100" y="420" width="10" height="10">
+  <use href="#starMarquee" x="1100" y="360" width="10" height="10">
     <animate attributeName="opacity" values="0;1;0" dur="1.8s" repeatCount="indefinite" begin="1s"/>
   </use>
 </svg>
