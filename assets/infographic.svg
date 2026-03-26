@@ -19,12 +19,10 @@
   <!-- Title Section -->
   <text x="400" y="70" font-family="Segoe UI, Roboto, sans-serif" font-size="40" font-weight="bold" fill="url(#titleGradient)" text-anchor="middle" letter-spacing="2">OPEN GESTURES</text>
   <text x="400" y="105" font-family="Segoe UI, Roboto, sans-serif" font-size="16" fill="#94A3B8" text-anchor="middle">Super minimal. Lightning fast.</text>
-  
-  <!-- Expanded Width Instruction Background (300px instead of 200px) -->
   <rect x="250" y="125" width="300" height="32" rx="16" fill="white" fill-opacity="0.05" stroke="white" stroke-opacity="0.1"/>
   <text x="400" y="146" font-family="Segoe UI, Roboto, sans-serif" font-size="14" fill="#F8FAFC" text-anchor="middle">Hold Middle Mouse Button and move</text>
 
-  <!-- Center Hub (Vertically centered with Back/Forward) -->
+  <!-- Center Hub -->
   <g transform="translate(370, 320)">
     <rect width="60" height="90" rx="30" stroke="#94A3B8" stroke-width="3"/>
     <rect x="27" y="15" width="6" height="15" rx="3" fill="#FF00FF">
@@ -33,68 +31,69 @@
     <text x="30" y="110" font-family="Segoe UI, Roboto, sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle">START HERE</text>
   </g>
 
-  <!-- Cards -->
+  <!-- Cards (180x120) -->
   <!-- Top Left: Prev Tab (Up-Left) -->
   <g transform="translate(100, 180)">
     <rect width="180" height="120" rx="16" fill="white" fill-opacity="0.03" stroke="#FF00FF" stroke-opacity="0.2"/>
-    <path d="M105 75L75 45M75 45V69M75 45H99" stroke="#FF00FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="90" y="95" font-family="Segoe UI, Roboto, sans-serif" font-size="18" font-weight="bold" fill="#F8FAFC" text-anchor="middle">Prev Tab</text>
-    <text x="90" y="112" font-family="Segoe UI, Roboto, sans-serif" font-size="12" fill="#94A3B8" text-anchor="middle">UP-LEFT</text>
+    <text x="90" y="25" font-family="Segoe UI, Roboto, sans-serif" font-size="14" font-weight="bold" fill="#F8FAFC" text-anchor="middle">Prev Tab</text>
+    <!-- Arrow scaled to ~80% of box height (approx 96px) -->
+    <path d="M135 100L45 15M45 15V75M45 15H105" stroke="#FF00FF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="90" y="112" font-family="Segoe UI, Roboto, sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle">UP-LEFT</text>
   </g>
 
   <!-- Top: Scroll Top (Up) -->
   <g transform="translate(310, 180)">
     <rect width="180" height="120" rx="16" fill="white" fill-opacity="0.03" stroke="#00FFFF" stroke-opacity="0.2"/>
-    <path d="M90 75V45M90 45L70 65M90 45L110 65" stroke="#00FFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="90" y="95" font-family="Segoe UI, Roboto, sans-serif" font-size="18" font-weight="bold" fill="#F8FAFC" text-anchor="middle">Scroll Top</text>
-    <text x="90" y="112" font-family="Segoe UI, Roboto, sans-serif" font-size="12" fill="#94A3B8" text-anchor="middle">UP</text>
+    <text x="90" y="25" font-family="Segoe UI, Roboto, sans-serif" font-size="14" font-weight="bold" fill="#F8FAFC" text-anchor="middle">Scroll Top</text>
+    <path d="M90 100V15M90 15L45 60M90 15L135 60" stroke="#00FFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="90" y="112" font-family="Segoe UI, Roboto, sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle">UP</text>
   </g>
 
   <!-- Top Right: Next Tab (Up-Right) -->
   <g transform="translate(520, 180)">
     <rect width="180" height="120" rx="16" fill="white" fill-opacity="0.03" stroke="#FF00FF" stroke-opacity="0.2"/>
-    <path d="M75 75L105 45M105 45H81M105 45V69" stroke="#FF00FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="90" y="95" font-family="Segoe UI, Roboto, sans-serif" font-size="18" font-weight="bold" fill="#F8FAFC" text-anchor="middle">Next Tab</text>
-    <text x="90" y="112" font-family="Segoe UI, Roboto, sans-serif" font-size="12" fill="#94A3B8" text-anchor="middle">UP-RIGHT</text>
+    <text x="90" y="25" font-family="Segoe UI, Roboto, sans-serif" font-size="14" font-weight="bold" fill="#F8FAFC" text-anchor="middle">Next Tab</text>
+    <path d="M45 100L135 15M135 15H75M135 15V75" stroke="#FF00FF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="90" y="112" font-family="Segoe UI, Roboto, sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle">UP-RIGHT</text>
   </g>
 
   <!-- Left: Back (Left) -->
   <g transform="translate(100, 320)">
     <rect width="180" height="120" rx="16" fill="white" fill-opacity="0.03" stroke="#00FFFF" stroke-opacity="0.2"/>
-    <path d="M110 60H70M70 60L90 80M70 60L90 40" stroke="#00FFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="90" y="95" font-family="Segoe UI, Roboto, sans-serif" font-size="18" font-weight="bold" fill="#F8FAFC" text-anchor="middle">Back</text>
-    <text x="90" y="112" font-family="Segoe UI, Roboto, sans-serif" font-size="12" fill="#94A3B8" text-anchor="middle">LEFT</text>
+    <text x="90" y="25" font-family="Segoe UI, Roboto, sans-serif" font-size="14" font-weight="bold" fill="#F8FAFC" text-anchor="middle">Back</text>
+    <path d="M150 60H30M30 60L75 105M30 60L75 15" stroke="#00FFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="90" y="112" font-family="Segoe UI, Roboto, sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle">LEFT</text>
   </g>
 
   <!-- Right: Forward (Right) -->
   <g transform="translate(520, 320)">
     <rect width="180" height="120" rx="16" fill="white" fill-opacity="0.03" stroke="#00FFFF" stroke-opacity="0.2"/>
-    <path d="M70 60H110M110 60L90 40M110 60L90 80" stroke="#00FFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="90" y="95" font-family="Segoe UI, Roboto, sans-serif" font-size="18" font-weight="bold" fill="#F8FAFC" text-anchor="middle">Forward</text>
-    <text x="90" y="112" font-family="Segoe UI, Roboto, sans-serif" font-size="12" fill="#94A3B8" text-anchor="middle">RIGHT</text>
+    <text x="90" y="25" font-family="Segoe UI, Roboto, sans-serif" font-size="14" font-weight="bold" fill="#F8FAFC" text-anchor="middle">Forward</text>
+    <path d="M30 60H150M150 60L105 15M150 60L105 105" stroke="#00FFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="90" y="112" font-family="Segoe UI, Roboto, sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle">RIGHT</text>
   </g>
 
   <!-- Bottom Left: New Tab (Down-Left) -->
   <g transform="translate(100, 460)">
     <rect width="180" height="120" rx="16" fill="white" fill-opacity="0.03" stroke="#FF00FF" stroke-opacity="0.2"/>
-    <path d="M105 45L75 75M75 75H99M75 75V51" stroke="#FF00FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="90" y="95" font-family="Segoe UI, Roboto, sans-serif" font-size="18" font-weight="bold" fill="#F8FAFC" text-anchor="middle">New Tab</text>
-    <text x="90" y="112" font-family="Segoe UI, Roboto, sans-serif" font-size="12" fill="#94A3B8" text-anchor="middle">DOWN-LEFT</text>
+    <text x="90" y="25" font-family="Segoe UI, Roboto, sans-serif" font-size="14" font-weight="bold" fill="#F8FAFC" text-anchor="middle">New Tab</text>
+    <path d="M135 15L45 105M45 105H105M45 105V45" stroke="#FF00FF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="90" y="112" font-family="Segoe UI, Roboto, sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle">DOWN-LEFT</text>
   </g>
 
   <!-- Bottom: Scroll Bottom (Down) -->
   <g transform="translate(310, 460)">
     <rect width="180" height="120" rx="16" fill="white" fill-opacity="0.03" stroke="#00FFFF" stroke-opacity="0.2"/>
-    <path d="M90 45V75M90 75L110 55M90 75L70 55" stroke="#00FFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="90" y="95" font-family="Segoe UI, Roboto, sans-serif" font-size="18" font-weight="bold" fill="#F8FAFC" text-anchor="middle">Scroll Bottom</text>
-    <text x="90" y="112" font-family="Segoe UI, Roboto, sans-serif" font-size="12" fill="#94A3B8" text-anchor="middle">DOWN</text>
+    <text x="90" y="25" font-family="Segoe UI, Roboto, sans-serif" font-size="14" font-weight="bold" fill="#F8FAFC" text-anchor="middle">Scroll Bottom</text>
+    <path d="M90 15V105M90 105L135 60M90 105L45 60" stroke="#00FFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="90" y="112" font-family="Segoe UI, Roboto, sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle">DOWN</text>
   </g>
 
   <!-- Bottom Right: Close Tab (Down-Right) -->
   <g transform="translate(520, 460)">
     <rect width="180" height="120" rx="16" fill="white" fill-opacity="0.03" stroke="#FF00FF" stroke-opacity="0.2"/>
-    <path d="M75 45L105 75M105 75V51M105 75H81" stroke="#FF00FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="90" y="95" font-family="Segoe UI, Roboto, sans-serif" font-size="18" font-weight="bold" fill="#F8FAFC" text-anchor="middle">Close Tab</text>
-    <text x="90" y="112" font-family="Segoe UI, Roboto, sans-serif" font-size="12" fill="#94A3B8" text-anchor="middle">DOWN-RIGHT</text>
+    <text x="90" y="25" font-family="Segoe UI, Roboto, sans-serif" font-size="14" font-weight="bold" fill="#F8FAFC" text-anchor="middle">Close Tab</text>
+    <path d="M45 15L135 105M135 105V45M135 105H75" stroke="#FF00FF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="90" y="112" font-family="Segoe UI, Roboto, sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle">DOWN-RIGHT</text>
   </g>
 </svg>
