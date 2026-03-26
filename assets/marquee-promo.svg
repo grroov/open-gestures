@@ -20,7 +20,7 @@
   
   <rect width="1400" height="560" rx="24" fill="url(#bgGradient)"/>
   
-  <!-- Massive Pink Trail Across Background (Moved slightly up to make room below) -->
+  <!-- Massive Pink Trail Across Background -->
   <path d="M150 220C400 220 900 390 1300 340" stroke="url(#trailGradientMarquee)" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.4"/>
 
   <!-- Left Side: Large Mouse Icon -->
@@ -29,54 +29,54 @@
     <rect x="27" y="15" width="6" height="15" rx="3" fill="#FF00FF"/>
   </g>
 
-  <!-- Center-Left: Main Branding (Moved BELOW the trail) -->
-  <g transform="translate(300, 380)">
+  <!-- Center-Left: Main Branding (Lowered further) -->
+  <g transform="translate(300, 400)">
     <text x="0" y="0" font-family="Segoe UI, Roboto, sans-serif" font-size="72" font-weight="bold" fill="url(#titleGradient)" letter-spacing="4">OPEN GESTURES</text>
     <text x="5" y="50" font-family="Segoe UI, Roboto, sans-serif" font-size="24" fill="#94A3B8">Super minimal. Lightning fast. No spyware.</text>
   </g>
 
-  <!-- Right Side: Gesture Grid (Compact 4x2) -->
+  <!-- Right Side: Gesture Grid (Compact 4x2) with more visible arrows -->
   <g transform="translate(850, 80)">
     <!-- Row 1 -->
     <g transform="translate(0, 0)">
       <rect width="120" height="90" rx="12" fill="white" fill-opacity="0.03" stroke="#FF00FF" stroke-opacity="0.2"/>
-      <path d="M90 70L30 20M30 20V55M30 20H65" stroke="#FF00FF" stroke-width="6" stroke-opacity="0.15" stroke-linecap="round" stroke-linejoin="round" transform="translate(15, 10) scale(0.6)"/>
+      <path d="M90 70L30 20M30 20V55M30 20H65" stroke="#FF00FF" stroke-width="6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" transform="translate(15, 10) scale(0.6)"/>
       <text x="60" y="75" font-family="Segoe UI, Roboto, sans-serif" font-size="12" fill="#F8FAFC" text-anchor="middle">Prev Tab</text>
     </g>
     <g transform="translate(130, 0)">
       <rect width="120" height="90" rx="12" fill="white" fill-opacity="0.03" stroke="#00FFFF" stroke-opacity="0.2"/>
-      <path d="M60 70V20M60 20L30 50M60 20L90 50" stroke="#00FFFF" stroke-width="6" stroke-opacity="0.15" stroke-linecap="round" stroke-linejoin="round" transform="translate(15, 10) scale(0.6)"/>
+      <path d="M60 70V20M60 20L30 50M60 20L90 50" stroke="#00FFFF" stroke-width="6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" transform="translate(15, 10) scale(0.6)"/>
       <text x="60" y="75" font-family="Segoe UI, Roboto, sans-serif" font-size="12" fill="#F8FAFC" text-anchor="middle">Scroll Top</text>
     </g>
     <g transform="translate(260, 0)">
       <rect width="120" height="90" rx="12" fill="white" fill-opacity="0.03" stroke="#FF00FF" stroke-opacity="0.2"/>
-      <path d="M30 70L90 20M90 20H50M90 20V55" stroke="#FF00FF" stroke-width="6" stroke-opacity="0.15" stroke-linecap="round" stroke-linejoin="round" transform="translate(15, 10) scale(0.6)"/>
+      <path d="M30 70L90 20M90 20H50M90 20V55" stroke="#FF00FF" stroke-width="6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" transform="translate(15, 10) scale(0.6)"/>
       <text x="60" y="75" font-family="Segoe UI, Roboto, sans-serif" font-size="12" fill="#F8FAFC" text-anchor="middle">Next Tab</text>
     </g>
     <g transform="translate(390, 0)">
       <rect width="120" height="90" rx="12" fill="white" fill-opacity="0.03" stroke="#00FFFF" stroke-opacity="0.2"/>
-      <path d="M100 45H20M20 45L50 75M20 45L50 15" stroke="#00FFFF" stroke-width="6" stroke-opacity="0.15" stroke-linecap="round" stroke-linejoin="round" transform="translate(15, 10) scale(0.6)"/>
+      <path d="M100 45H20M20 45L50 75M20 45L50 15" stroke="#00FFFF" stroke-width="6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" transform="translate(15, 10) scale(0.6)"/>
       <text x="60" y="75" font-family="Segoe UI, Roboto, sans-serif" font-size="12" fill="#F8FAFC" text-anchor="middle">Back</text>
     </g>
     <!-- Row 2 -->
     <g transform="translate(0, 100)">
       <rect width="120" height="90" rx="12" fill="white" fill-opacity="0.03" stroke="#FF00FF" stroke-opacity="0.2"/>
-      <path d="M90 20L30 70M30 70H70M30 70V30" stroke="#FF00FF" stroke-width="6" stroke-opacity="0.15" stroke-linecap="round" stroke-linejoin="round" transform="translate(15, 10) scale(0.6)"/>
+      <path d="M90 20L30 70M30 70H70M30 70V30" stroke="#FF00FF" stroke-width="6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" transform="translate(15, 10) scale(0.6)"/>
       <text x="60" y="75" font-family="Segoe UI, Roboto, sans-serif" font-size="12" fill="#F8FAFC" text-anchor="middle">New Tab</text>
     </g>
     <g transform="translate(130, 100)">
       <rect width="120" height="90" rx="12" fill="white" fill-opacity="0.03" stroke="#00FFFF" stroke-opacity="0.2"/>
-      <path d="M60 20V70M60 70L90 40M60 70L30 40" stroke="#00FFFF" stroke-width="6" stroke-opacity="0.15" stroke-linecap="round" stroke-linejoin="round" transform="translate(15, 10) scale(0.6)"/>
+      <path d="M60 20V70M60 70L90 40M60 70L30 40" stroke="#00FFFF" stroke-width="6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" transform="translate(15, 10) scale(0.6)"/>
       <text x="60" y="75" font-family="Segoe UI, Roboto, sans-serif" font-size="12" fill="#F8FAFC" text-anchor="middle">Scroll Bottom</text>
     </g>
     <g transform="translate(260, 100)">
       <rect width="120" height="90" rx="12" fill="white" fill-opacity="0.03" stroke="#FF00FF" stroke-opacity="0.2"/>
-      <path d="M30 20L90 70M90 70V30M90 70H50" stroke="#FF00FF" stroke-width="6" stroke-opacity="0.15" stroke-linecap="round" stroke-linejoin="round" transform="translate(15, 10) scale(0.6)"/>
+      <path d="M30 20L90 70M90 70V30M90 70H50" stroke="#FF00FF" stroke-width="6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" transform="translate(15, 10) scale(0.6)"/>
       <text x="60" y="75" font-family="Segoe UI, Roboto, sans-serif" font-size="12" fill="#F8FAFC" text-anchor="middle">Close Tab</text>
     </g>
     <g transform="translate(390, 100)">
       <rect width="120" height="90" rx="12" fill="white" fill-opacity="0.03" stroke="#00FFFF" stroke-opacity="0.2"/>
-      <path d="M20 45H100M100 45L70 15M100 45L70 75" stroke="#00FFFF" stroke-width="6" stroke-opacity="0.15" stroke-linecap="round" stroke-linejoin="round" transform="translate(15, 10) scale(0.6)"/>
+      <path d="M20 45H100M100 45L70 15M100 45L70 75" stroke="#00FFFF" stroke-width="6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" transform="translate(15, 10) scale(0.6)"/>
       <text x="60" y="75" font-family="Segoe UI, Roboto, sans-serif" font-size="12" fill="#F8FAFC" text-anchor="middle">Forward</text>
     </g>
   </g>
