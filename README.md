@@ -4,7 +4,7 @@
   <img src="assets/icon.png" width="128" height="128" alt="Open Gestures Icon">
 </p>
 
-Super minimal and lightning-fast middle-button mouse gestures for Chrome. No complex configuration, just natural movements.
+Super minimal and lightning-fast middle-button mouse gestures for Chrome with **no evil tracking code or spyware**. No complex configuration, just natural movements.
 
 ## 📥 Get it
 Experience the fastest way to navigate the web. Click the badge below to install **Open Gestures** directly from the Chrome Web Store:
