@@ -1,1 +1,13 @@
-The smallest (code-wise) and most minimal gesture extension on the CWS. Has 8 basic gestures, is open-source, and is so fast that it cannot be made faster or smaller. See the code for yourself if you want to try! The link to the source code is in the "Support" section below.
+Open Gestures is the most minimal and efficient mouse gesture extension for Chrome. Built for speed and privacy, it provides 8 essential navigation gestures using a robust radial detection system.
+
+Features:
+- 8 Quick Actions: Scroll Top/Bottom, Back/Forward, and Tab Management (Prev, Next, New, Close).
+- Smart Detection: 45° radial sectors ensure every swipe is accurate and responsive.
+- Visual Feedback: A real-time SVG trail and action overlay show you exactly what's happening.
+- High-Contrast: Automatically adjusts trail color for perfect visibility on any website.
+- Privacy First: 100% open-source with no tracking, no spyware, and zero evil code.
+- Material Design: A beautiful, modern options menu for full customization.
+
+Hold the Middle Mouse Button and move to navigate. Experience a faster web with Open Gestures.
+
+The link to the source code is in the "Support" section below.
