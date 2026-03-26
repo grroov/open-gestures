@@ -28,6 +28,19 @@ Hold the **Middle Mouse Button** and swipe in any of the 8 directions below to t
 - **Safety First:** Prevents accidental link clicks and middle-click autoscroll while gesturing.
 - **Material Design 3:** Clean, modern options popup.
 
+## ⚙️ Options
+Customize your experience via the extension's options popup.
+
+<p align="center">
+  <img src="assets/options-infographic.svg" width="300" alt="Options Popup Infographic">
+</p>
+
+- **Mouse Trail:** Toggle the visibility of the line drawn while gesturing.
+- **Action Overlay:** Show or hide the action name (e.g., "Back") next to your cursor.
+- **Escape to Cancel:** When enabled, pressing the `Esc` key will void the current gesture.
+- **Dynamic Color:** Automatically selects Cyan or Magenta based on the webpage's background to ensure maximum visibility.
+- **Fixed Trail Color:** Choose a specific color if Dynamic Color is disabled.
+
 ## 📦 Developer Installation
 If you're contributing or using a local build:
 1. Download or clone this repository.
