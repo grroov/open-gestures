@@ -1,6 +1,6 @@
 {
    "action": { 
-      "default_icon": "icon.png",
+      "default_icon": "assets/icon.png",
       "default_title": "Open Gestures Options",
       "default_popup": "options.html"
    },
@@ -16,9 +16,9 @@
       "run_at": "document_start"
    }],
    "description": "Super minimal and fast middle button mouse gestures!",
-   "icons": { "128": "icon.png" },
+   "icons": { "128": "assets/icon.png" },
    "manifest_version": 3,
    "name": "Open Gestures",
    "permissions": [ "tabs", "storage" ],
-   "version": "2026.0.0"
+   "version": "2026.1.0"
    }
