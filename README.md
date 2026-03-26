@@ -10,7 +10,7 @@ Super minimal and lightning-fast middle-button mouse gestures for Chrome. No com
 Experience the fastest way to navigate the web. Click the badge below to install **Open Gestures** directly from the Chrome Web Store:
 
 <a href="https://chromewebstore.google.com/detail/open-gestures/lenjmpkjhnmmkcdicfdbnolhbigifpbo">
-  <img src="https://developer.chrome.com/docs/webstore/branding/images/ChromeWebStore_BadgeWBorder_v2_206x58.png" alt="Available in the Chrome Web Store" height="58">
+  <img src="https://developer.chrome.com/static/docs/webstore/branding/image/iNEddTyWiMfLSwFD6qGq.png" alt="Available in the Chrome Web Store" height="58">
 </a>
 
 *Once on the store page, simply click **Add to Chrome** and confirm the installation.*
