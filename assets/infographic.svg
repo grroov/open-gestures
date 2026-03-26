@@ -19,16 +19,16 @@
   <!-- Title Section -->
   <text x="400" y="70" font-family="Segoe UI, Roboto, sans-serif" font-size="40" font-weight="bold" fill="url(#titleGradient)" text-anchor="middle" letter-spacing="2">OPEN GESTURES</text>
   <text x="400" y="105" font-family="Segoe UI, Roboto, sans-serif" font-size="16" fill="#94A3B8" text-anchor="middle">Super minimal. Lightning fast.</text>
-  <rect x="250" y="125" width="300" height="32" rx="16" fill="white" fill-opacity="0.05" stroke="white" stroke-opacity="0.1"/>
-  <text x="400" y="146" font-family="Segoe UI, Roboto, sans-serif" font-size="14" fill="#F8FAFC" text-anchor="middle">Hold Middle Mouse Button and move</text>
 
-  <!-- Center Hub -->
-  <g transform="translate(370, 320)">
+  <!-- Center Hub with Instructions Below Mouse -->
+  <g transform="translate(370, 270)">
+    <!-- Mouse Icon -->
     <rect width="60" height="90" rx="30" stroke="#94A3B8" stroke-width="3"/>
     <rect x="27" y="15" width="6" height="15" rx="3" fill="#FF00FF">
       <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite" />
     </rect>
-    <text x="30" y="110" font-family="Segoe UI, Roboto, sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle">START HERE</text>
+    <!-- Repositioned Instruction (Directly below mouse, no box) -->
+    <text x="30" y="115" font-family="Segoe UI, Roboto, sans-serif" font-size="14" fill="#F8FAFC" text-anchor="middle">Hold Middle Mouse Button and move</text>
   </g>
 
   <!-- Cards (180x120) -->
