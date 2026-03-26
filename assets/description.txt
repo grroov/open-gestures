@@ -1,0 +1,1 @@
+The smallest (code-wise) and most minimal gesture extension on the CWS. Has 8 basic gestures, is open-source, and is so fast that it cannot be made faster or smaller. See the code for yourself if you want to try! The link to the source code is in the "Support" section below.
