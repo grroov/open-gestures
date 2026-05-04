@@ -143,6 +143,15 @@
     </label>
   </div>
 
+  <div class="option" style="flex-direction: column; align-items: flex-start; gap: 8px;">
+    <div style="display: flex; justify-content: space-between; width: 100%;">
+      <label>Activation Distance</label>
+      <span id="thresholdValue" style="font-size: 0.8rem; font-weight: bold; color: var(--primary);">50px</span>
+    </div>
+    <div class="help">Pixels to move before gesture activates.</div>
+    <input type="range" id="threshold" min="10" max="150" value="50" style="width: 100%;">
+  </div>
+
   <div class="option">
     <label>Action Overlay</label>
     <div class="help">Show the name of the gesture while drawing.</div>

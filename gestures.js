@@ -4,14 +4,14 @@ if (window.location.hostname === "remotedesktop.google.com") {
   let startX, startY;
   let isDown = false;
   let currentGesture = null;
-  const THRESHOLD = 50; // Radial distance to trigger
 
   let settings = {
     showTrail: true,
     showOverlay: true,
     escCancel: true,
     dynamicColor: true,
-    trailColor: '#00ffff'
+    trailColor: '#00ffff',
+    threshold: 50
   };
 
   function cancelGesture() {
@@ -24,8 +24,10 @@ if (window.location.hostname === "remotedesktop.google.com") {
   function getHighContrastColor() {
     if (!settings.dynamicColor) return settings.trailColor;
 
-    // Get background color of the body or root
-    let bg = window.getComputedStyle(document.body).backgroundColor;
+    let bg = 'rgba(0, 0, 0, 0)';
+    if (document.body) {
+      bg = window.getComputedStyle(document.body).backgroundColor;
+    }
 
     // If body is transparent, check documentElement
     if (bg === 'rgba(0, 0, 0, 0)' || bg === 'transparent') {
@@ -123,7 +125,7 @@ if (window.location.hostname === "remotedesktop.google.com") {
 
   function getGesture(dx, dy) {
     const distance = Math.sqrt(dx * dx + dy * dy);
-    if (distance < THRESHOLD) return null;
+    if (distance < settings.threshold) return null;
 
     const angle = Math.atan2(dy, dx) * (180 / Math.PI); // -180 to 180
     // Normalize to 0 to 360, where 0 is Right
@@ -135,6 +137,7 @@ if (window.location.hostname === "remotedesktop.google.com") {
 
   window.addEventListener('mousedown', (e) => {
     if (e.button === 1) {
+      e.preventDefault(); // Prevent autoscroll and drag-and-drop from stealing the event
       startX = e.clientX;
       startY = e.clientY;
       isDown = true;
@@ -201,7 +204,7 @@ if (window.location.hostname === "remotedesktop.google.com") {
       // If we moved enough to trigger a gesture, prevent the default middle-click action (like opening a link)
       const dx = e.clientX - startX;
       const dy = e.clientY - startY;
-      if (Math.sqrt(dx * dx + dy * dy) > THRESHOLD) {
+      if (Math.sqrt(dx * dx + dy * dy) > settings.threshold) {
         e.preventDefault();
       }
     }

@@ -3,7 +3,8 @@ const DEFAULTS = {
   showOverlay: true,
   escCancel: true,
   dynamicColor: true,
-  trailColor: '#00ffff'
+  trailColor: '#00ffff',
+  threshold: 50
 };
 
 // Saves options to chrome.storage
@@ -13,7 +14,8 @@ const saveOptions = () => {
     showOverlay: document.getElementById('showOverlay').checked,
     escCancel: document.getElementById('escCancel').checked,
     dynamicColor: document.getElementById('dynamicColor').checked,
-    trailColor: document.getElementById('trailColor').value
+    trailColor: document.getElementById('trailColor').value,
+    threshold: parseInt(document.getElementById('threshold').value, 10)
   };
 
   document.getElementById('colorPickerSection').classList.toggle('disabled', settings.dynamicColor);
@@ -39,6 +41,8 @@ const restoreOptions = () => {
     document.getElementById('escCancel').checked = items.escCancel;
     document.getElementById('dynamicColor').checked = items.dynamicColor;
     document.getElementById('trailColor').value = items.trailColor;
+    document.getElementById('threshold').value = items.threshold;
+    document.getElementById('thresholdValue').innerText = `${items.threshold}px`;
     document.getElementById('colorPickerSection').classList.toggle('disabled', items.dynamicColor);
   });
 };
@@ -49,6 +53,10 @@ document.getElementById('showOverlay').addEventListener('change', saveOptions);
 document.getElementById('escCancel').addEventListener('change', saveOptions);
 document.getElementById('dynamicColor').addEventListener('change', saveOptions);
 document.getElementById('trailColor').addEventListener('input', saveOptions);
+document.getElementById('threshold').addEventListener('input', (e) => {
+  document.getElementById('thresholdValue').innerText = `${e.target.value}px`;
+});
+document.getElementById('threshold').addEventListener('change', saveOptions);
 
 document.getElementById('titleLink').addEventListener('click', () => {
   chrome.tabs.create({ url: 'https://github.com/grroov/open-gestures' });
