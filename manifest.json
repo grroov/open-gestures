@@ -20,5 +20,5 @@
    "manifest_version": 3,
    "name": "Open Gestures",
    "permissions": [ "tabs", "storage" ],
-   "version": "2026.1.1"
+   "version": "2026.2.0"
    }
