@@ -16,14 +16,13 @@ Experience the fastest way to navigate the web. Click the badge below to install
 *Once on the store page, simply click **Add to Chrome** and confirm the installation.*
 
 ## 🚀 How to Use
-Hold the **Middle Mouse Button** and swipe in any of the 8 directions below to trigger an action.
+Hold the **Middle Mouse Button** (default) and swipe in any of the 8 directions below to trigger an action. You can change the trigger to the Left or Right button in the options.
 
 ![Open Gestures Infographic](assets/infographic.svg)
 
 ## 🛠 Features
 - **Radial Detection:** 8 directions (U, D, L, R + diagonals) with equal 45° triggers.
 - **Visual Trail:** Real-time SVG path showing your gesture.
-- **Dynamic High-Contrast:** Automatically switches trail color based on the website's background.
 - **Action Overlay:** Shows the recognized action at your cursor before you release.
 - **Safety First:** Prevents accidental link clicks and middle-click autoscroll while gesturing.
 - **Material Design 3:** Clean, modern options popup.
@@ -36,10 +35,10 @@ Customize your experience via the extension's options popup.
 </p>
 
 - **Mouse Trail:** Toggle the visibility of the line drawn while gesturing.
+- **Mouse Button Trigger:** Choose which mouse button (Left, Middle, Right) activates gestures.
 - **Action Overlay:** Show or hide the action name (e.g., "Back") next to your cursor.
 - **Escape to Cancel:** When enabled, pressing the `Esc` key will void the current gesture.
-- **Dynamic Color:** Automatically selects Cyan or Magenta based on the webpage's background to ensure maximum visibility.
-- **Fixed Trail Color:** Choose a specific color if Dynamic Color is disabled.
+- **Trail Color:** Choose a specific color for your gesture trail.
 
 ## 📦 Developer Installation
 If you're contributing or using a local build:

@@ -15,10 +15,10 @@
       "matches": [ "<all_urls>" ],
       "run_at": "document_start"
    }],
-   "description": "Super minimal and fast middle button mouse gestures!",
+   "description": "Super minimal and fast customizable mouse gestures!",
    "icons": { "128": "assets/icon.png" },
    "manifest_version": 3,
    "name": "Open Gestures",
    "permissions": [ "tabs", "storage" ],
-   "version": "2026.2.0"
+   "version": "2026.5.0"
    }

@@ -9,9 +9,9 @@ if (window.location.hostname === "remotedesktop.google.com") {
     showTrail: true,
     showOverlay: true,
     escCancel: true,
-    dynamicColor: true,
-    trailColor: '#00ffff',
-    threshold: 50
+    trailColor: '#cf699b',
+    threshold: 10,
+    mouseButton: 0
   };
 
   function cancelGesture() {
@@ -19,29 +19,6 @@ if (window.location.hostname === "remotedesktop.google.com") {
     currentGesture = null;
     feedback.style.display = 'none';
     trailSvg.style.display = 'none';
-  }
-
-  function getHighContrastColor() {
-    if (!settings.dynamicColor) return settings.trailColor;
-
-    let bg = 'rgba(0, 0, 0, 0)';
-    if (document.body) {
-      bg = window.getComputedStyle(document.body).backgroundColor;
-    }
-
-    // If body is transparent, check documentElement
-    if (bg === 'rgba(0, 0, 0, 0)' || bg === 'transparent') {
-      bg = window.getComputedStyle(document.documentElement).backgroundColor;
-    }
-
-    const rgb = bg.match(/\d+/g);
-    if (!rgb || rgb.length < 3) return settings.trailColor;
-
-    // Calculate luminance: 0.299R + 0.587G + 0.114B
-    const luminance = (0.299 * rgb[0] + 0.587 * rgb[1] + 0.114 * rgb[2]) / 255;
-
-    // If background is dark, use cyan. If light, use a deep magenta/purple.
-    return luminance > 0.5 ? '#ff00ff' : '#00ffff';
   }
 
   // Load settings and listen for changes
@@ -60,9 +37,20 @@ if (window.location.hostname === "remotedesktop.google.com") {
   });
 
   function updateTrailStyles() {
-    const color = getHighContrastColor();
-    startDot.setAttribute("fill", color);
-    trailLine.setAttribute("stroke", color);
+    startDot.setAttribute("fill", settings.trailColor);
+    trailLine.setAttribute("stroke", settings.trailColor);
+  }
+
+  function safeSendMessage(msg) {
+    if (chrome && chrome.runtime && chrome.runtime.sendMessage) {
+      try {
+        chrome.runtime.sendMessage(msg);
+      } catch (e) {
+        console.warn("Open Gestures: Error sending message.", e);
+      }
+    } else {
+      console.warn("Open Gestures: Extension context invalidated. Please refresh the page.");
+    }
   }
 
   const GESTURE_MAP = {
@@ -70,10 +58,10 @@ if (window.location.hostname === "remotedesktop.google.com") {
     'D': { label: 'Scroll Bottom', action: () => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }) },
     'L': { label: 'Back', action: () => window.history.back() },
     'R': { label: 'Forward', action: () => window.history.forward() },
-    'UL': { label: 'Prev Tab', action: () => chrome.runtime.sendMessage({ openGesture: 'tabprev' }) },
-    'UR': { label: 'Next Tab', action: () => chrome.runtime.sendMessage({ openGesture: 'tabnext' }) },
-    'DL': { label: 'New Tab', action: () => chrome.runtime.sendMessage({ openGesture: 'tabnew' }) },
-    'DR': { label: 'Close Tab', action: () => chrome.runtime.sendMessage({ openGesture: 'tabclose' }) }
+    'UL': { label: 'Prev Tab', action: () => safeSendMessage({ openGesture: 'tabprev' }) },
+    'UR': { label: 'Next Tab', action: () => safeSendMessage({ openGesture: 'tabnext' }) },
+    'DL': { label: 'New Tab', action: () => safeSendMessage({ openGesture: 'tabnew' }) },
+    'DR': { label: 'Close Tab', action: () => safeSendMessage({ openGesture: 'tabclose' }) }
   };
 
   const feedback = document.createElement('div');
@@ -136,13 +124,11 @@ if (window.location.hostname === "remotedesktop.google.com") {
   }
 
   window.addEventListener('mousedown', (e) => {
-    if (e.button === 1) {
+    if (e.button === settings.mouseButton) {
       e.preventDefault(); // Prevent autoscroll and drag-and-drop from stealing the event
       startX = e.clientX;
       startY = e.clientY;
       isDown = true;
-
-      updateTrailStyles(); // Recalculate color for the current page context
 
       if (settings.showTrail) {
         startDot.setAttribute("cx", startX);
@@ -178,7 +164,7 @@ if (window.location.hostname === "remotedesktop.google.com") {
   }, { passive: false });
 
   window.addEventListener('mouseup', (e) => {
-    if (e.button === 1 && isDown) {
+    if (e.button === settings.mouseButton && isDown) {
       isDown = false;
       feedback.style.display = 'none';
       trailSvg.style.display = 'none';
@@ -192,16 +178,30 @@ if (window.location.hostname === "remotedesktop.google.com") {
     }
   }, true);
 
-  // Block the middle-click "autoscroll" and context menu if a gesture was performed
+  // Block default actions (click, auxclick, contextmenu) if a gesture was performed
   window.addEventListener('click', (e) => {
-    if (e.button === 1 && currentGesture) {
-      e.preventDefault();
+    if (e.button === settings.mouseButton) {
+      const dx = e.clientX - startX;
+      const dy = e.clientY - startY;
+      if (Math.sqrt(dx * dx + dy * dy) > settings.threshold) {
+        e.preventDefault();
+      }
     }
   }, true);
 
   window.addEventListener('auxclick', (e) => {
-    if (e.button === 1) {
-      // If we moved enough to trigger a gesture, prevent the default middle-click action (like opening a link)
+    if (e.button === settings.mouseButton) {
+      // If we moved enough to trigger a gesture, prevent the default action (like opening a link)
+      const dx = e.clientX - startX;
+      const dy = e.clientY - startY;
+      if (Math.sqrt(dx * dx + dy * dy) > settings.threshold) {
+        e.preventDefault();
+      }
+    }
+  }, true);
+
+  window.addEventListener('contextmenu', (e) => {
+    if (settings.mouseButton === 2) {
       const dx = e.clientX - startX;
       const dy = e.clientY - startY;
       if (Math.sqrt(dx * dx + dy * dy) > settings.threshold) {

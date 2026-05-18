@@ -28,7 +28,7 @@
       <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite" />
     </rect>
     <!-- Instruction (Directly below mouse, no box) -->
-    <text x="30" y="115" font-family="Segoe UI, Roboto, sans-serif" font-size="14" fill="#F8FAFC" text-anchor="middle">Hold Middle Mouse Button and move</text>
+    <text x="30" y="115" font-family="Segoe UI, Roboto, sans-serif" font-size="14" fill="#F8FAFC" text-anchor="middle">Hold Selected Mouse Button and move</text>
   </g>
 
   <!-- Cards (180x120) -->

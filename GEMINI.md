@@ -18,25 +18,26 @@ The extension remains "super minimal" but has been upgraded from simple coordina
 - **Anti-Aliasing:** Uses `shape-rendering: geometricPrecision` and rounded stroke-caps to ensure the 1px trail looks smooth on all displays.
 - **Action Overlay:** A Material-styled label follows the cursor to show the recognized action (e.g., "Back", "Next Tab") before release.
 
-### 3. Dynamic High-Contrast Color
-- **Logic:** The extension analyzes the `window.getComputedStyle` of the page (checking `body` and `documentElement`).
-- **Luminance Calculation:** Uses the formula `0.299R + 0.587G + 0.114B` to determine if the page is light or dark.
-- **Selection:** Dynamically switches between **Cyan (#00ffff)** for dark pages and **Magenta (#ff00ff)** for light pages to ensure the trail is always visible.
+
 
 ### 4. Options & UI (Material Design 3)
 - **Popup UI:** The options page was moved from a tab to a compact 280px popup.
 - **Material Design:** Implemented MD3 color palettes, typography, and interactive switches.
 - **Space Efficiency:** Feature descriptions are hidden behind hover-over tooltips to keep the popup clean.
-- **Chrome Sync:** All settings (Trail toggle, Overlay toggle, Esc-to-Cancel, Dynamic Color, Fixed Color) are persisted across devices via `chrome.storage.sync`.
+- **Chrome Sync:** All settings (Trail toggle, Overlay toggle, Esc-to-Cancel, Trail Color) are persisted across devices via `chrome.storage.sync`.
 
 ### 5. Interaction Safety
 - **Escape to Cancel:** A specific listener is active *only* during a gesture, allowing the user to press `Esc` to void the action.
-- **Autoscroll Blocking:** Standard middle-click autoscroll is suppressed when a gesture is detected.
-- **Link Protection:** `auxclick` is prevented if the mouse has moved past the threshold, stopping middle-clicks from accidentally opening links during a gesture.
+- **Autoscroll Blocking:** Standard middle-click autoscroll (when using Middle button) is suppressed when a gesture is detected.
+- **Link Protection:** `auxclick` is prevented if the mouse has moved past the threshold, stopping clicks from accidentally opening links during a gesture.
 
 ### 6. Event Handling
-- Modernized to use `e.button === 1` for consistent middle-click detection across browsers.
+- Modernized to dynamically check `e.button === settings.mouseButton` for consistent gesture triggering across browsers.
 - Uses `mousedown`, `mousemove`, `mouseup`, and `auxclick` with capturing/bubbling priority to ensure gesture reliability even on complex web apps.
+
+### 7. Customizable Mouse Button Trigger (Version 2026.3)
+- **Flexibility:** Users can now choose between Left, Middle, or Right mouse buttons to trigger gestures.
+- **Context Menu Handling:** When Right click is selected, the native context menu is intelligently suppressed only if a gesture was performed, preserving normal right-click functionality.
 
 ---
 *Maintained by Gemini CLI*

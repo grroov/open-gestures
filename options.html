@@ -106,14 +106,32 @@
     input:checked + .slider { background-color: var(--primary); }
     input:checked + .slider:before { transform: translateX(16px); }
 
+    .color-control {
+      display: flex;
+      gap: 8px;
+      width: 100%;
+      align-items: center;
+    }
     input[type="color"] { 
       border: none; 
-      width: 128px; height: 32px; 
+      flex: 1; height: 32px; 
       cursor: pointer; 
       background: none; 
       padding: 0;
       border-radius: 16px;
       overflow: hidden;
+    }
+    input[type="text"].hex-input {
+      flex: 1;
+      height: 32px;
+      border: 1px solid var(--outline);
+      border-radius: 8px;
+      padding: 0 8px;
+      font-family: monospace;
+      font-size: 0.9rem;
+      background: var(--surface);
+      color: var(--on-surface);
+      box-sizing: border-box;
     }
     #colorPickerSection {
       margin-bottom: 0 !important;
@@ -134,6 +152,25 @@
 <body>
   <h1 id="titleLink">Open Gestures</h1>
   
+  <div class="option" style="flex-direction: column; align-items: flex-start; gap: 8px;">
+    <label>Mouse Button Trigger</label>
+    <div class="help">Which mouse button to hold for gestures.</div>
+    <div style="display: flex; gap: 16px; margin-top: 4px; font-size: 0.9rem;">
+      <label><input type="radio" name="mouseButton" value="0" checked> Left</label>
+      <label><input type="radio" name="mouseButton" value="1"> Middle</label>
+      <label><input type="radio" name="mouseButton" value="2"> Right</label>
+    </div>
+  </div>
+
+  <div class="option" style="flex-direction: column; align-items: flex-start; gap: 8px;">
+    <div style="display: flex; justify-content: space-between; width: 100%;">
+      <label>Activation Distance</label>
+      <span id="thresholdValue" style="font-size: 0.8rem; font-weight: bold; color: var(--primary);">10px</span>
+    </div>
+    <div class="help">Pixels to move before gesture activates.</div>
+    <input type="range" id="threshold" min="10" max="150" value="10" style="width: 100%;">
+  </div>
+
   <div class="option">
     <label>Mouse Trail</label>
     <div class="help">Show the path you draw during a gesture.</div>
@@ -141,15 +178,6 @@
       <input type="checkbox" id="showTrail">
       <span class="slider"></span>
     </label>
-  </div>
-
-  <div class="option" style="flex-direction: column; align-items: flex-start; gap: 8px;">
-    <div style="display: flex; justify-content: space-between; width: 100%;">
-      <label>Activation Distance</label>
-      <span id="thresholdValue" style="font-size: 0.8rem; font-weight: bold; color: var(--primary);">50px</span>
-    </div>
-    <div class="help">Pixels to move before gesture activates.</div>
-    <input type="range" id="threshold" min="10" max="150" value="50" style="width: 100%;">
   </div>
 
   <div class="option">
@@ -170,20 +198,12 @@
     </label>
   </div>
 
-  <div class="option">
-    <label>Dynamic Color</label>
-    <div class="help">Pick high-contrast color based on website.</div>
-    <label class="switch">
-      <input type="checkbox" id="dynamicColor">
-      <span class="slider"></span>
-    </label>
-  </div>
-
   <div class="option" id="colorPickerSection" style="flex-direction: column; align-items: flex-start; gap: 8px;">
-    <label>Fixed Trail Color</label>
-    <div class="help">Select color (if Dynamic is disabled).</div>
+    <label>Trail Color</label>
+    <div class="help">Select the color of the mouse trail.</div>
     <div class="color-control">
-      <input type="color" id="trailColor" value="#00ffff">
+      <input type="color" id="trailColor" value="#cf699b">
+      <input type="text" id="trailColorHex" class="hex-input" value="#cf699b" maxlength="7">
     </div>
   </div>
 

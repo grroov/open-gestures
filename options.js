@@ -2,9 +2,9 @@ const DEFAULTS = {
   showTrail: true,
   showOverlay: true,
   escCancel: true,
-  dynamicColor: true,
-  trailColor: '#00ffff',
-  threshold: 50
+  trailColor: '#cf699b',
+  threshold: 10,
+  mouseButton: 0
 };
 
 // Saves options to chrome.storage
@@ -13,12 +13,10 @@ const saveOptions = () => {
     showTrail: document.getElementById('showTrail').checked,
     showOverlay: document.getElementById('showOverlay').checked,
     escCancel: document.getElementById('escCancel').checked,
-    dynamicColor: document.getElementById('dynamicColor').checked,
     trailColor: document.getElementById('trailColor').value,
-    threshold: parseInt(document.getElementById('threshold').value, 10)
+    threshold: parseInt(document.getElementById('threshold').value, 10),
+    mouseButton: parseInt(document.querySelector('input[name="mouseButton"]:checked').value, 10)
   };
-
-  document.getElementById('colorPickerSection').classList.toggle('disabled', settings.dynamicColor);
 
   chrome.storage.sync.set(settings, () => {
     if (chrome.runtime.lastError) {
@@ -39,20 +37,47 @@ const restoreOptions = () => {
     document.getElementById('showTrail').checked = items.showTrail;
     document.getElementById('showOverlay').checked = items.showOverlay;
     document.getElementById('escCancel').checked = items.escCancel;
-    document.getElementById('dynamicColor').checked = items.dynamicColor;
     document.getElementById('trailColor').value = items.trailColor;
+    document.getElementById('trailColorHex').value = items.trailColor;
     document.getElementById('threshold').value = items.threshold;
     document.getElementById('thresholdValue').innerText = `${items.threshold}px`;
-    document.getElementById('colorPickerSection').classList.toggle('disabled', items.dynamicColor);
+    document.querySelector(`input[name="mouseButton"][value="${items.mouseButton}"]`).checked = true;
   });
 };
 
 document.addEventListener('DOMContentLoaded', restoreOptions);
+document.querySelectorAll('input[name="mouseButton"]').forEach(radio => {
+  radio.addEventListener('change', saveOptions);
+});
 document.getElementById('showTrail').addEventListener('change', saveOptions);
 document.getElementById('showOverlay').addEventListener('change', saveOptions);
 document.getElementById('escCancel').addEventListener('change', saveOptions);
-document.getElementById('dynamicColor').addEventListener('change', saveOptions);
-document.getElementById('trailColor').addEventListener('input', saveOptions);
+document.getElementById('trailColor').addEventListener('input', (e) => {
+  document.getElementById('trailColorHex').value = e.target.value;
+  saveOptions();
+});
+
+document.getElementById('trailColorHex').addEventListener('input', (e) => {
+  let hex = e.target.value;
+  if (/^#[0-9A-Fa-f]{6}$/.test(hex)) {
+    document.getElementById('trailColor').value = hex;
+    saveOptions();
+  }
+});
+
+document.getElementById('trailColorHex').addEventListener('change', (e) => {
+  let hex = e.target.value;
+  if (!hex.startsWith('#')) {
+    hex = '#' + hex;
+    e.target.value = hex;
+  }
+  if (/^#[0-9A-Fa-f]{6}$/.test(hex)) {
+    document.getElementById('trailColor').value = hex;
+    saveOptions();
+  } else {
+    e.target.value = document.getElementById('trailColor').value;
+  }
+});
 document.getElementById('threshold').addEventListener('input', (e) => {
   document.getElementById('thresholdValue').innerText = `${e.target.value}px`;
 });
