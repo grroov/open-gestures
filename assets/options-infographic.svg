@@ -1,31 +1,63 @@
-<svg width="400" height="500" viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="400" height="600" viewBox="0 0 400 600" fill="none" xmlns="http://www.w3.org/2000/svg">
   <!-- Window Background -->
-  <rect width="400" height="500" rx="24" fill="#141218"/>
-  <rect x="0.5" y="0.5" width="399" height="499" rx="23.5" stroke="#938F99" stroke-opacity="0.2"/>
+  <rect width="400" height="600" rx="24" fill="#141218"/>
+  <rect x="0.5" y="0.5" width="399" height="599" rx="23.5" stroke="#938F99" stroke-opacity="0.2"/>
 
   <!-- Header -->
   <text x="30" y="50" font-family="Segoe UI, Roboto, sans-serif" font-size="24" font-weight="bold" fill="#02BF02">Open Gestures</text>
 
   <!-- Options List -->
   <g transform="translate(20, 80)">
-    <!-- Mouse Trail -->
-    <rect width="360" height="56" rx="12" fill="#45414E"/>
-    <text x="16" y="34" font-family="Segoe UI, Roboto, sans-serif" font-size="16" fill="white">Mouse Trail</text>
-    <!-- Switch ON -->
-    <rect x="304" y="16" width="40" height="24" rx="12" fill="#02BF02"/>
-    <circle cx="332" cy="28" r="9" fill="white"/>
     
-    <!-- Action Overlay -->
-    <g transform="translate(0, 72)">
+    <!-- 1. Mouse Button Trigger -->
+    <rect width="360" height="80" rx="12" fill="#45414E"/>
+    <text x="16" y="30" font-family="Segoe UI, Roboto, sans-serif" font-size="16" fill="white">Mouse Button Trigger</text>
+    
+    <!-- Radio Left -->
+    <circle cx="26" cy="54" r="6" stroke="#cf699b" stroke-width="4" fill="#141218"/>
+    <text x="42" y="59" font-family="Segoe UI, Roboto, sans-serif" font-size="15" fill="white">Left</text>
+    
+    <!-- Radio Middle -->
+    <circle cx="106" cy="54" r="7" fill="white"/>
+    <text x="122" y="59" font-family="Segoe UI, Roboto, sans-serif" font-size="15" fill="white">Middle</text>
+    
+    <!-- Radio Right -->
+    <circle cx="196" cy="54" r="7" fill="white"/>
+    <text x="212" y="59" font-family="Segoe UI, Roboto, sans-serif" font-size="15" fill="white">Right</text>
+
+    <!-- 2. Activation Distance -->
+    <g transform="translate(0, 92)">
+      <rect width="360" height="80" rx="12" fill="#45414E"/>
+      <text x="16" y="30" font-family="Segoe UI, Roboto, sans-serif" font-size="14" fill="white">Activation Distance</text>
+      <text x="344" y="30" font-family="Segoe UI, Roboto, sans-serif" font-size="14" font-weight="bold" fill="#02BF02" text-anchor="end">10px</text>
+      
+      <!-- Slider Track -->
+      <rect x="16" y="52" width="328" height="6" rx="3" fill="#141218" stroke="#938F99" stroke-opacity="0.5"/>
+      
+      <!-- Slider Thumb -->
+      <circle cx="22" cy="55" r="8" fill="#cf699b"/>
+    </g>
+
+    <!-- 3. Mouse Trail -->
+    <g transform="translate(0, 184)">
       <rect width="360" height="56" rx="12" fill="#45414E"/>
-      <text x="16" y="34" font-family="Segoe UI, Roboto, sans-serif" font-size="16" fill="white">Action Overlay</text>
+      <text x="16" y="34" font-family="Segoe UI, Roboto, sans-serif" font-size="16" fill="white">Mouse Trail</text>
       <!-- Switch ON -->
       <rect x="304" y="16" width="40" height="24" rx="12" fill="#02BF02"/>
       <circle cx="332" cy="28" r="9" fill="white"/>
     </g>
 
-    <!-- Escape to Cancel -->
-    <g transform="translate(0, 144)">
+    <!-- 4. Action Overlay -->
+    <g transform="translate(0, 252)">
+      <rect width="360" height="56" rx="12" fill="#45414E"/>
+      <text x="16" y="34" font-family="Segoe UI, Roboto, sans-serif" font-size="16" fill="white">Action Overlay</text>
+      <!-- Switch OFF -->
+      <rect x="304" y="16" width="40" height="24" rx="12" fill="#938F99"/>
+      <circle cx="316" cy="28" r="9" fill="white"/>
+    </g>
+
+    <!-- 5. Escape to Cancel -->
+    <g transform="translate(0, 320)">
       <rect width="360" height="56" rx="12" fill="#45414E"/>
       <text x="16" y="34" font-family="Segoe UI, Roboto, sans-serif" font-size="16" fill="white">Escape to Cancel</text>
       <!-- Switch ON -->
@@ -33,23 +65,17 @@
       <circle cx="332" cy="28" r="9" fill="white"/>
     </g>
 
-    <!-- Dynamic Color -->
-    <g transform="translate(0, 216)">
-      <rect width="360" height="56" rx="12" fill="#45414E"/>
-      <text x="16" y="34" font-family="Segoe UI, Roboto, sans-serif" font-size="16" fill="white">Dynamic Color</text>
-      <!-- Switch ON -->
-      <rect x="304" y="16" width="40" height="24" rx="12" fill="#02BF02"/>
-      <circle cx="332" cy="28" r="9" fill="white"/>
-    </g>
-
-    <!-- Fixed Trail Color -->
-    <g transform="translate(0, 288)">
-      <rect width="360" height="72" rx="12" fill="#45414E"/>
-      <text x="16" y="30" font-family="Segoe UI, Roboto, sans-serif" font-size="16" fill="white">Fixed Trail Color</text>
-      <rect x="16" y="40" width="128" height="20" rx="10" fill="#00FFFF"/>
+    <!-- 6. Trail Color -->
+    <g transform="translate(0, 388)">
+      <rect width="360" height="86" rx="12" fill="#45414E"/>
+      <text x="16" y="30" font-family="Segoe UI, Roboto, sans-serif" font-size="16" fill="white">Trail Color</text>
+      
+      <!-- Color Swatch -->
+      <rect x="16" y="44" width="48" height="28" rx="4" fill="#cf699b"/>
+      
+      <!-- Hex Input Box -->
+      <rect x="76" y="42" width="268" height="32" rx="6" fill="#141218" stroke="#938F99" stroke-width="1"/>
+      <text x="86" y="64" font-family="monospace" font-size="16" fill="white">#cf699b</text>
     </g>
   </g>
-
-  <!-- Status Message -->
-  <text x="200" y="470" font-family="Segoe UI, Roboto, sans-serif" font-size="14" fill="#02BF02" text-anchor="middle">Settings saved!</text>
 </svg>

@@ -34,8 +34,9 @@ Customize your experience via the extension's options popup.
   <img src="assets/options-infographic.svg" width="300" alt="Options Popup Infographic">
 </p>
 
-- **Mouse Trail:** Toggle the visibility of the line drawn while gesturing.
 - **Mouse Button Trigger:** Choose which mouse button (Left, Middle, Right) activates gestures.
+- **Activation Distance:** Set the distance (in pixels) the mouse must move before a gesture activates.
+- **Mouse Trail:** Toggle the visibility of the line drawn while gesturing.
 - **Action Overlay:** Show or hide the action name (e.g., "Back") next to your cursor.
 - **Escape to Cancel:** When enabled, pressing the `Esc` key will void the current gesture.
 - **Trail Color:** Choose a specific color for your gesture trail.
