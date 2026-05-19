@@ -1,7 +1,7 @@
 # Open Gestures
 
 <p align="center">
-  <img src="assets/icon.png?v=2026.7.0" width="128" height="128" alt="Open Gestures Icon">
+  <img src="assets/icon.png?v=2026.8.0" width="128" height="128" alt="Open Gestures Icon">
 </p>
 
 Super minimal and lightning-fast middle-button mouse gestures for Chrome with **no evil tracking code or spyware**. No complex configuration, just natural movements.
@@ -18,7 +18,7 @@ Experience the fastest way to navigate the web. Click the badge below to install
 ## 🚀 How to Use
 Hold the **Middle Mouse Button** (default) and swipe in any of the 8 directions below to trigger an action. You can change the trigger to the Left or Right button in the options.
 
-![Open Gestures Infographic](assets/infographic.svg?v=2026.7.0)
+![Open Gestures Infographic](assets/infographic.svg?v=2026.8.0)
 
 ## 🛠 Features
 - **Radial Detection:** 8 directions (U, D, L, R + diagonals) with equal 45° triggers.
@@ -31,7 +31,7 @@ Hold the **Middle Mouse Button** (default) and swipe in any of the 8 directions 
 Customize your experience via the extension's options popup.
 
 <p align="center">
-  <img src="assets/options-infographic.svg?v=2026.7.0" width="300" alt="Options Popup Infographic">
+  <img src="assets/options-infographic.svg?v=2026.8.0" width="300" alt="Options Popup Infographic">
 </p>
 
 - **Mouse Button Trigger:** Choose which mouse button (Left, Middle, Right) activates gestures.
