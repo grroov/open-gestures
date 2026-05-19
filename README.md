@@ -38,7 +38,7 @@ Customize your experience via the extension's options popup.
 - **Activation Distance:** Set the distance (in pixels) the mouse must move before a gesture activates.
 - **Mouse Trail:** Toggle the visibility of the line drawn while gesturing.
 - **Action Overlay:** Show or hide the action name (e.g., "Back") next to your cursor.
-- **Escape to Cancel:** When enabled, pressing the `Esc` key will void the current gesture.
+- **Shift Disable:** When enabled, holding down or pressing the Shift key will temporarily disable or cancel active gestures.
 - **Trail Color:** Choose a specific color for your gesture trail.
 
 ## 📦 Developer Installation

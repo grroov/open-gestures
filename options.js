@@ -1,10 +1,10 @@
 const DEFAULTS = {
   showTrail: true,
   showOverlay: true,
-  escCancel: true,
   trailColor: '#cf699b',
   threshold: 10,
-  mouseButton: 0
+  mouseButton: 0,
+  shiftDisable: false
 };
 
 // Saves options to chrome.storage
@@ -12,10 +12,10 @@ const saveOptions = () => {
   const settings = {
     showTrail: document.getElementById('showTrail').checked,
     showOverlay: document.getElementById('showOverlay').checked,
-    escCancel: document.getElementById('escCancel').checked,
     trailColor: document.getElementById('trailColor').value,
     threshold: parseInt(document.getElementById('threshold').value, 10),
-    mouseButton: parseInt(document.querySelector('input[name="mouseButton"]:checked').value, 10)
+    mouseButton: parseInt(document.querySelector('input[name="mouseButton"]:checked').value, 10),
+    shiftDisable: document.getElementById('shiftDisable').checked
   };
 
   chrome.storage.sync.set(settings, () => {
@@ -36,12 +36,12 @@ const restoreOptions = () => {
   chrome.storage.sync.get(DEFAULTS, (items) => {
     document.getElementById('showTrail').checked = items.showTrail;
     document.getElementById('showOverlay').checked = items.showOverlay;
-    document.getElementById('escCancel').checked = items.escCancel;
     document.getElementById('trailColor').value = items.trailColor;
     document.getElementById('trailColorHex').value = items.trailColor;
     document.getElementById('threshold').value = items.threshold;
     document.getElementById('thresholdValue').innerText = `${items.threshold}px`;
     document.querySelector(`input[name="mouseButton"][value="${items.mouseButton}"]`).checked = true;
+    document.getElementById('shiftDisable').checked = items.shiftDisable;
   });
 };
 
@@ -51,7 +51,7 @@ document.querySelectorAll('input[name="mouseButton"]').forEach(radio => {
 });
 document.getElementById('showTrail').addEventListener('change', saveOptions);
 document.getElementById('showOverlay').addEventListener('change', saveOptions);
-document.getElementById('escCancel').addEventListener('change', saveOptions);
+document.getElementById('shiftDisable').addEventListener('change', saveOptions);
 document.getElementById('trailColor').addEventListener('input', (e) => {
   document.getElementById('trailColorHex').value = e.target.value;
   saveOptions();

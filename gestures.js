@@ -8,10 +8,10 @@ if (window.location.hostname === "remotedesktop.google.com") {
   let settings = {
     showTrail: true,
     showOverlay: true,
-    escCancel: true,
     trailColor: '#cf699b',
     threshold: 10,
-    mouseButton: 0
+    mouseButton: 0,
+    shiftDisable: false
   };
 
   function cancelGesture() {
@@ -124,6 +124,7 @@ if (window.location.hostname === "remotedesktop.google.com") {
   }
 
   window.addEventListener('mousedown', (e) => {
+    if (settings.shiftDisable && e.shiftKey) return;
     if (e.button === settings.mouseButton) {
       e.preventDefault(); // Prevent autoscroll and drag-and-drop from stealing the event
       startX = e.clientX;
@@ -180,6 +181,7 @@ if (window.location.hostname === "remotedesktop.google.com") {
 
   // Block default actions (click, auxclick, contextmenu) if a gesture was performed
   window.addEventListener('click', (e) => {
+    if (settings.shiftDisable && e.shiftKey) return;
     if (e.button === settings.mouseButton) {
       const dx = e.clientX - startX;
       const dy = e.clientY - startY;
@@ -190,6 +192,7 @@ if (window.location.hostname === "remotedesktop.google.com") {
   }, true);
 
   window.addEventListener('auxclick', (e) => {
+    if (settings.shiftDisable && e.shiftKey) return;
     if (e.button === settings.mouseButton) {
       // If we moved enough to trigger a gesture, prevent the default action (like opening a link)
       const dx = e.clientX - startX;
@@ -201,6 +204,7 @@ if (window.location.hostname === "remotedesktop.google.com") {
   }, true);
 
   window.addEventListener('contextmenu', (e) => {
+    if (settings.shiftDisable && e.shiftKey) return;
     if (settings.mouseButton === 2) {
       const dx = e.clientX - startX;
       const dy = e.clientY - startY;
@@ -211,7 +215,11 @@ if (window.location.hostname === "remotedesktop.google.com") {
   }, true);
 
   window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && isDown && settings.escCancel) {
+    if (e.key === 'Escape' && isDown) {
+      cancelGesture();
+      e.preventDefault();
+      e.stopPropagation();
+    } else if (e.key === 'Shift' && isDown && settings.shiftDisable) {
       cancelGesture();
       e.preventDefault();
       e.stopPropagation();

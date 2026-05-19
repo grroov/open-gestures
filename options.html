@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
   <title>Open Gestures Options</title>
   <style>
     :root {
@@ -32,9 +33,9 @@
       margin: 0;
     }
     h1 { 
-      font-size: 1.4rem; 
+      font-size: 1.15rem; 
       margin-top: 0; 
-      margin-bottom: 1.25rem; 
+      margin-bottom: 0.6rem; 
       color: var(--primary);
       cursor: pointer;
       display: inline-block;
@@ -54,28 +55,8 @@
       cursor: default;
     }
     
-    .option > label { font-weight: 500; font-size: 0.9rem; cursor: help; }
-    
-    .help { 
-      position: absolute;
-      bottom: 105%;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--on-surface);
-      color: var(--surface);
-      padding: 8px 12px;
-      border-radius: 8px;
-      font-size: 0.75rem;
-      width: 200px;
-      text-align: center;
-      visibility: hidden;
-      opacity: 0;
-      transition: opacity 0.2s;
-      z-index: 100;
-      pointer-events: none;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-    .option:hover .help { visibility: visible; opacity: 1; }
+    .option > label { font-weight: 500; font-size: 0.9rem; }
+
 
     /* Material Switch */
     .switch {
@@ -150,12 +131,11 @@
   </style>
 </head>
 <body>
-  <h1 id="titleLink">Open Gestures</h1>
+  <h1 id="titleLink">Open Gestures &#128279;</h1>
   
   <div class="option" style="flex-direction: column; align-items: flex-start; gap: 8px;">
     <label>Mouse Button Trigger</label>
-    <div class="help">Which mouse button to hold for gestures.</div>
-    <div style="display: flex; gap: 16px; margin-top: 4px; font-size: 0.9rem;">
+    <div style="display: flex; justify-content: space-between; width: 100%; box-sizing: border-box; margin-top: 4px; font-size: 0.9rem;">
       <label><input type="radio" name="mouseButton" value="0" checked> Left</label>
       <label><input type="radio" name="mouseButton" value="1"> Middle</label>
       <label><input type="radio" name="mouseButton" value="2"> Right</label>
@@ -164,16 +144,14 @@
 
   <div class="option" style="flex-direction: column; align-items: flex-start; gap: 8px;">
     <div style="display: flex; justify-content: space-between; width: 100%;">
-      <label>Activation Distance</label>
-      <span id="thresholdValue" style="font-size: 0.8rem; font-weight: bold; color: var(--primary);">10px</span>
+      <label style="font-weight: 500; font-size: 0.9rem;">Activation Distance</label>
+      <span id="thresholdValue" style="font-size: 0.9rem; font-weight: bold; color: var(--primary);">10px</span>
     </div>
-    <div class="help">Pixels to move before gesture activates.</div>
     <input type="range" id="threshold" min="10" max="150" value="10" style="width: 100%;">
   </div>
 
   <div class="option">
     <label>Mouse Trail</label>
-    <div class="help">Show the path you draw during a gesture.</div>
     <label class="switch">
       <input type="checkbox" id="showTrail">
       <span class="slider"></span>
@@ -182,25 +160,24 @@
 
   <div class="option">
     <label>Action Overlay</label>
-    <div class="help">Show the name of the gesture while drawing.</div>
     <label class="switch">
       <input type="checkbox" id="showOverlay">
       <span class="slider"></span>
     </label>
   </div>
 
+
   <div class="option">
-    <label>Escape to Cancel</label>
-    <div class="help">Press Escape while drawing to cancel.</div>
+    <label>Shift Disable</label>
     <label class="switch">
-      <input type="checkbox" id="escCancel">
+      <input type="checkbox" id="shiftDisable">
       <span class="slider"></span>
     </label>
   </div>
 
+
   <div class="option" id="colorPickerSection" style="flex-direction: column; align-items: flex-start; gap: 8px;">
     <label>Trail Color</label>
-    <div class="help">Select the color of the mouse trail.</div>
     <div class="color-control">
       <input type="color" id="trailColor" value="#cf699b">
       <input type="text" id="trailColorHex" class="hex-input" value="#cf699b" maxlength="7">
