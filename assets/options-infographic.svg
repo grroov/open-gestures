@@ -4,7 +4,7 @@
   <rect x="0.5" y="0.5" width="399" height="599" rx="23.5" stroke="#938F99" stroke-opacity="0.2"/>
 
   <!-- Header -->
-  <text x="30" y="50" font-family="Segoe UI, Roboto, sans-serif" font-size="24" font-weight="bold" fill="#02BF02">Open Gestures</text>
+  <text x="30" y="50" font-family="Segoe UI, Roboto, sans-serif" font-size="24" font-weight="bold" fill="#02BF02">Open Gestures &#128279;</text>
 
   <!-- Options List -->
   <g transform="translate(20, 80)">
@@ -13,17 +13,17 @@
     <rect width="360" height="80" rx="12" fill="#45414E"/>
     <text x="16" y="30" font-family="Segoe UI, Roboto, sans-serif" font-size="16" fill="white">Mouse Button Trigger</text>
     
-    <!-- Radio Left -->
+    <!-- Radio Left (Double-Justified) -->
     <circle cx="26" cy="54" r="6" stroke="#cf699b" stroke-width="4" fill="#141218"/>
     <text x="42" y="59" font-family="Segoe UI, Roboto, sans-serif" font-size="15" fill="white">Left</text>
     
-    <!-- Radio Middle -->
-    <circle cx="106" cy="54" r="7" fill="white"/>
-    <text x="122" y="59" font-family="Segoe UI, Roboto, sans-serif" font-size="15" fill="white">Middle</text>
+    <!-- Radio Middle (Double-Justified) -->
+    <circle cx="155" cy="54" r="7" fill="white"/>
+    <text x="171" y="59" font-family="Segoe UI, Roboto, sans-serif" font-size="15" fill="white">Middle</text>
     
-    <!-- Radio Right -->
-    <circle cx="196" cy="54" r="7" fill="white"/>
-    <text x="212" y="59" font-family="Segoe UI, Roboto, sans-serif" font-size="15" fill="white">Right</text>
+    <!-- Radio Right (Double-Justified) -->
+    <circle cx="290" cy="54" r="7" fill="white"/>
+    <text x="306" y="59" font-family="Segoe UI, Roboto, sans-serif" font-size="15" fill="white">Right</text>
 
     <!-- 2. Activation Distance -->
     <g transform="translate(0, 92)">
@@ -56,13 +56,13 @@
       <circle cx="316" cy="28" r="9" fill="white"/>
     </g>
 
-    <!-- 5. Escape to Cancel -->
+    <!-- 5. Shift Disable -->
     <g transform="translate(0, 320)">
       <rect width="360" height="56" rx="12" fill="#45414E"/>
-      <text x="16" y="34" font-family="Segoe UI, Roboto, sans-serif" font-size="16" fill="white">Escape to Cancel</text>
-      <!-- Switch ON -->
-      <rect x="304" y="16" width="40" height="24" rx="12" fill="#02BF02"/>
-      <circle cx="332" cy="28" r="9" fill="white"/>
+      <text x="16" y="34" font-family="Segoe UI, Roboto, sans-serif" font-size="16" fill="white">Shift Disable</text>
+      <!-- Switch OFF -->
+      <rect x="304" y="16" width="40" height="24" rx="12" fill="#938F99"/>
+      <circle cx="316" cy="28" r="9" fill="white"/>
     </g>
 
     <!-- 6. Trail Color -->
