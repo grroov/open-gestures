@@ -4,6 +4,7 @@ if (window.location.hostname === "remotedesktop.google.com") {
   let startX, startY;
   let isDown = false;
   let currentGesture = null;
+  let gestureActive = false;
 
   let settings = {
     showTrail: true,
@@ -123,9 +124,52 @@ if (window.location.hostname === "remotedesktop.google.com") {
     return ['R', 'DR', 'D', 'DL', 'L', 'UL', 'U', 'UR'][sector];
   }
 
+  function isInteractiveElement(target, event) {
+    if (!target) return false;
+    const interactiveTags = ['INPUT', 'TEXTAREA', 'SELECT', 'OPTION', 'BUTTON', 'A', 'LABEL', 'AUDIO', 'VIDEO'];
+    const interactiveRoles = ['button', 'link', 'checkbox', 'radio', 'textbox', 'listbox', 'combobox', 'menuitem'];
+
+    // Use composedPath if available to traverse shadow DOM
+    const path = event && typeof event.composedPath === 'function' ? event.composedPath() : [];
+    if (path.length > 0) {
+      for (const el of path) {
+        if (el.tagName) {
+          const tagName = el.tagName.toUpperCase();
+          if (interactiveTags.includes(tagName)) return true;
+          if (el.hasAttribute && el.hasAttribute('contenteditable')) return true;
+          if (el.isContentEditable) return true;
+          const role = el.getAttribute && el.getAttribute('role');
+          if (role && interactiveRoles.includes(role.toLowerCase())) return true;
+        }
+      }
+      return false;
+    }
+
+    // Fallback to manual ancestor traversal
+    let current = target;
+    while (current && current !== document.documentElement) {
+      if (current.tagName) {
+        const tagName = current.tagName.toUpperCase();
+        if (interactiveTags.includes(tagName)) return true;
+        if (current.hasAttribute && current.hasAttribute('contenteditable')) return true;
+        if (current.isContentEditable) return true;
+        const role = current.getAttribute && current.getAttribute('role');
+        if (role && interactiveRoles.includes(role.toLowerCase())) return true;
+      }
+      current = current.parentElement;
+    }
+    return false;
+  }
+
   window.addEventListener('mousedown', (e) => {
     if (settings.shiftDisable && e.shiftKey) return;
     if (e.button === settings.mouseButton) {
+      // If left click is the trigger, don't intercept interactions with form and interactive elements
+      if (settings.mouseButton === 0 && isInteractiveElement(e.target, e)) {
+        gestureActive = false;
+        return;
+      }
+      gestureActive = true;
       e.preventDefault(); // Prevent autoscroll and drag-and-drop from stealing the event
       startX = e.clientX;
       startY = e.clientY;
@@ -182,7 +226,7 @@ if (window.location.hostname === "remotedesktop.google.com") {
   // Block default actions (click, auxclick, contextmenu) if a gesture was performed
   window.addEventListener('click', (e) => {
     if (settings.shiftDisable && e.shiftKey) return;
-    if (e.button === settings.mouseButton) {
+    if (e.button === settings.mouseButton && gestureActive) {
       const dx = e.clientX - startX;
       const dy = e.clientY - startY;
       if (Math.sqrt(dx * dx + dy * dy) > settings.threshold) {
@@ -193,7 +237,7 @@ if (window.location.hostname === "remotedesktop.google.com") {
 
   window.addEventListener('auxclick', (e) => {
     if (settings.shiftDisable && e.shiftKey) return;
-    if (e.button === settings.mouseButton) {
+    if (e.button === settings.mouseButton && gestureActive) {
       // If we moved enough to trigger a gesture, prevent the default action (like opening a link)
       const dx = e.clientX - startX;
       const dy = e.clientY - startY;
@@ -205,7 +249,7 @@ if (window.location.hostname === "remotedesktop.google.com") {
 
   window.addEventListener('contextmenu', (e) => {
     if (settings.shiftDisable && e.shiftKey) return;
-    if (settings.mouseButton === 2) {
+    if (settings.mouseButton === 2 && gestureActive) {
       const dx = e.clientX - startX;
       const dy = e.clientY - startY;
       if (Math.sqrt(dx * dx + dy * dy) > settings.threshold) {
