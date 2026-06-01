@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Open Gestures Options</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #8553a8;
+      --primary-gradient: linear-gradient(135deg, #a066cc, #cf699b);
+      --on-primary: #ffffff;
+      --background: #f7f2fa;
+      --surface: #ffffff;
+      --on-surface: #1d1b20;
+      --outline: #79747e;
+      --surface-container: #f3edf7;
+      --surface-card: #fdf8fd;
+      --shadow: 0 8px 32px rgba(103, 80, 164, 0.05);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --primary: #cf699b;
+        --primary-gradient: linear-gradient(135deg, #cf699b, #a066cc);
+        --on-primary: #381e72;
+        --background: #0f0d13;
+        --surface: #141218;
+        --on-surface: #e6e1e5;
+        --outline: #938f99;
+        --surface-container: #211f26;
+        --surface-card: #2b2930;
+        --shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+      }
+    }
+    body { 
+      font-family: 'Outfit', 'Inter', 'Segoe UI', Roboto, sans-serif; 
+      background-color: var(--background);
+      color: var(--on-surface);
+      margin: 0;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      box-sizing: border-box;
+      transition: background-color 0.3s ease;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 480px;
+      background: var(--surface);
+      padding: 36px;
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(121, 116, 126, 0.15);
+      box-sizing: border-box;
+      position: relative;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    h1 { 
+      font-size: 2rem; 
+      margin-top: 0; 
+      margin-bottom: 0.4rem; 
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      cursor: pointer;
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      transition: opacity 0.2s ease;
+    }
+    h1:hover { opacity: 0.85; }
+    
+    .subtitle {
+      font-size: 0.9rem;
+      color: var(--outline);
+      margin: 0;
+      font-weight: 400;
+    }
+
+    .option { 
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 1.25rem; 
+      padding: 16px 20px;
+      background: var(--surface-card);
+      border: 1px solid rgba(121, 116, 126, 0.1);
+      border-radius: 20px;
+      transition: box-shadow 0.2s ease;
+    }
+    .option:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+    
+    .option-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+    
+    .option-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--on-surface);
+      margin: 0;
+    }
+
+    /* Radio Button Styling */
+    .radio-group {
+      display: flex;
+      background: var(--surface-container);
+      padding: 4px;
+      border-radius: 12px;
+      gap: 2px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .radio-group label {
+      flex: 1;
+      text-align: center;
+      padding: 8px 0;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s, color 0.2s;
+      color: var(--outline);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .radio-group input[type="radio"] {
+      display: none;
+    }
+    .radio-group label:has(input:checked) {
+      background: var(--surface);
+      color: var(--primary);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      font-weight: 600;
+    }
+
+    /* Range Slider Styling */
+    input[type="range"] {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: var(--surface-container);
+      outline: none;
+      margin: 8px 0;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--primary);
+      cursor: pointer;
+      transition: transform 0.1s ease, background-color 0.2s;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+    input[type="range"]::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+
+    /* Material Switch */
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 44px;
+      height: 24px;
+      cursor: pointer;
+    }
+    .switch input { opacity: 0; width: 0; height: 0; }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: var(--outline);
+      transition: .3s;
+      border-radius: 24px;
+      opacity: 0.7;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px; width: 18px;
+      left: 3px; bottom: 3px;
+      background-color: white;
+      transition: .3s;
+      border-radius: 50%;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    }
+    input:checked + .slider { background-color: var(--primary); opacity: 1; }
+    input:checked + .slider:before { transform: translateX(20px); }
+
+    .color-control {
+      display: flex;
+      gap: 12px;
+      width: 100%;
+      align-items: center;
+    }
+    input[type="color"] { 
+      border: none; 
+      width: 44px;
+      height: 44px;
+      cursor: pointer; 
+      background: none; 
+      padding: 0;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+    input[type="color"]:hover {
+      transform: scale(1.05);
+    }
+    input[type="color"]::-webkit-color-swatch-wrapper {
+      padding: 0;
+    }
+    input[type="color"]::-webkit-color-swatch {
+      border: none;
+      border-radius: 50%;
+    }
+    input[type="text"].hex-input, input[type="text"].text-input, textarea.text-input {
+      flex: 1;
+      border: 1px solid rgba(121, 116, 126, 0.2);
+      border-radius: 12px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      background: var(--surface);
+      color: var(--on-surface);
+      box-sizing: border-box;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    input[type="text"].hex-input, input[type="text"].text-input {
+      height: 38px;
+      padding: 0 12px;
+    }
+    textarea.text-input {
+      padding: 12px;
+      height: 110px;
+      line-height: 1.4;
+      resize: vertical;
+    }
+    input[type="text"].hex-input {
+      font-family: 'Inter', monospace;
+    }
+    input[type="text"].hex-input:focus, input[type="text"].text-input:focus, textarea.text-input:focus {
+      border-color: var(--primary);
+    }
+    .option-description {
+      font-size: 0.8rem;
+      color: var(--outline);
+      margin: 6px 0 0 0;
+      line-height: 1.4;
+      font-weight: 400;
+      opacity: 0.85;
+    }
+    
+    .status { 
+      position: absolute;
+      bottom: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.85rem; 
+      font-weight: 500;
+      color: var(--on-primary); 
+      background: var(--primary);
+      padding: 8px 24px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: opacity 0.3s, transform 0.3s; 
+      opacity: 0; 
+      pointer-events: none;
+      white-space: nowrap;
+    }
+    .status.visible { 
+      opacity: 1; 
+      transform: translate(-50%, -10px);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1 id="titleLink">Open Gestures</h1>
+      <p class="subtitle">Customize your browser gesture preferences</p>
+    </div>
+    
+    <div class="option">
+      <p class="option-title">Mouse Button Trigger</p>
+      <div class="radio-group">
+        <label><input type="radio" name="mouseButton" value="0"> Left</label>
+        <label><input type="radio" name="mouseButton" value="1"> Middle</label>
+        <label><input type="radio" name="mouseButton" value="2" checked> Right</label>
+      </div>
+      <p class="option-description">Choose which mouse button activates gestures (Left, Middle, or Right).</p>
+    </div>
+
+    <div class="option" id="colorPickerSection">
+      <p class="option-title">Trail Color</p>
+      <div class="color-control">
+        <input type="color" id="trailColor" value="#cf699b">
+        <input type="text" id="trailColorHex" class="hex-input" value="#cf699b" maxlength="7">
+      </div>
+      <p class="option-description">Choose the visual color of the gesture trail and start dot.</p>
+    </div>
+
+    <div class="option">
+      <div class="option-row">
+        <p class="option-title">Mouse Trail</p>
+        <label class="switch">
+          <input type="checkbox" id="showTrail">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <p class="option-description">Show or hide the visual trail lines drawn as you drag.</p>
+    </div>
+
+    <div class="option">
+      <div class="option-row">
+        <p class="option-title">Key-Press Disable</p>
+        <label class="switch">
+          <input type="checkbox" id="keyPressDisable" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+      <p class="option-description">Pressing any key immediately cancels and disables gestures.</p>
+    </div>
+
+    <div class="option" style="flex-direction: column; align-items: flex-start; gap: 8px;">
+      <p class="option-title">Excluded Domains</p>
+      <textarea id="excludedDomains" class="text-input" style="width: 100%;" placeholder="e.g. docs.google.com, remotedesktop.google.com"></textarea>
+      <p class="option-description">Comma-separated list of websites where gestures will be completely disabled (e.g., docs.google.com, remotedesktop.google.com).</p>
+    </div>
+
+    <div id="status" class="status">Settings saved!</div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

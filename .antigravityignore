@@ -1,0 +1,9 @@
+.git
+.gitignore
+.geminiignore
+.DS_Store
+.worktrees
+node_modules/
+dist/
+build/
+*.log
